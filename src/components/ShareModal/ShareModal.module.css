@@ -1,0 +1,11 @@
+.ant-modal .ant-modal-content {
+  padding: 0 !important;
+}
+
+.ant-modal .ant-modal-header {
+  border-bottom: 1px solid red !important;
+}
+
+.test {
+  background-color: red;
+}
