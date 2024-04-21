@@ -5,6 +5,7 @@ import { MdOutlineTimer } from 'react-icons/md'
 import { IoDocumentText } from 'react-icons/io5'
 import { IoPlayCircleOutline } from 'react-icons/io5'
 import { IoDocumentOutline } from 'react-icons/io5'
+import 'animate.css'
 
 type Props = {
   handleStartLearning: () => void // Define the type of handleStartLearning
@@ -63,7 +64,7 @@ const CourseDetailsTab = ({ handleStartLearning }: Props) => {
             <div>
               {/* ACCORDION HEADER */}
               <div
-                className={`w-full pb-2 bg-gradient-to-b from-violet-300 to-violet-100 rounded-lg shadow border border-violet-300 flex-col justify-start items-start gap-px inline-flex ${
+                className={`w-full pb-2 bg-gradient-to-b from-violet-300 to-violet-100 rounded-lg shadow border border-violet-300 flex-col justify-start items-start gap-px inline-flex animate__animated animate__pulse ${
                   isAccordionOpen ? 'hidden' : ''
                 }`}
               >
@@ -134,7 +135,12 @@ const CourseDetailsTab = ({ handleStartLearning }: Props) => {
               </div>
 
               {/* ACCORDION BODY */}
-              <div className={`${isAccordionOpen ? '' : 'hidden'} `}>
+              <div
+                className={`${
+                  isAccordionOpen ? '' : 'hidden'
+                } transition-all duration-500 ease-in-out`}
+              >
+                {' '}
                 <div className="w-full px-2 mb-2 py-3 bg-gradient-to-b from-violet-300 to-violet-100 rounded-lg shadow border border-violet-300 justify-between items-start inline-flex">
                   <div className="justify-start items-start gap-2 flex">
                     <div className="w-5 h-5 p-[3px] bg-violet-100 rounded shadow border border-violet-300 justify-center items-center flex">
@@ -166,7 +172,7 @@ const CourseDetailsTab = ({ handleStartLearning }: Props) => {
                     </svg>
                   </div>
                 </div>
-                <div className="w-full h-[216px] flex-col justify-start items-end gap-4 inline-flex">
+                <div className="w-full h-[216px] flex-col justify-start items-end gap-4 inline-flex animate__animated animate__fadeIn">
                   <div className="self-stretch px-2 py-1 bg-white rounded shadow border border-indigo-400 justify-start items-start gap-2 inline-flex">
                     <div className="w-[22px] h-[22px] relative">
                       <div className="w-[22px] h-[22px] left-0 top-0 absolute">
@@ -297,7 +303,7 @@ const CourseDetailsTab = ({ handleStartLearning }: Props) => {
           </div>
         )}
         {activeTab === 'discussion' && (
-          <div className="bg-white shadow-md rounded-md p-6">
+          <div className="bg-white shadow-md rounded-md p-6 animate__animated animate__pulse">
             {/* Your discussion forum content goes here */}
             <p className="text-lg font-semibold">
               Welcome to the Discussion Forum!

@@ -2,12 +2,13 @@ import React from 'react'
 import logo from '../../../public/assets/verticul_logo.svg'
 import spark from '../../../public/assets/spark.svg'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Navbar = () => {
   return (
     <nav className=" h-16 px-12 py-4 bg-white flex items-center justify-between ">
       {/* Logo */}
-      <div className="flex items-center gap-2">
+      <Link href="/" className="flex items-center gap-2">
         <div className="w-[30px] h-[30px] p-0.5 bg-white rounded shadow border border-indigo-50 justify-center items-center inline-flex">
           <div className="grow shrink basis-0 self-stretch p-1 bg-violet-50 rounded-sm justify-center items-center inline-flex">
             <Image src={logo} alt="vertical logo" width={30} height={30} />
@@ -16,7 +17,7 @@ const Navbar = () => {
         <div className=" text-gray-900 text-base font-bold font-space-grotesk uppercase leading-tight tracking-tight">
           Verticul
         </div>
-      </div>
+      </Link>
 
       {/* Nav List */}
       <div className="ml-[100px] w-max h-[34px] px-10 py-1.5 bg-white rounded-[32px] shadow border border-gray-200 flex-col justify-start items-start gap-px inline-flex">
@@ -87,7 +88,8 @@ const Navbar = () => {
               className=" rounded-full"
               fill={true}
               src="/assets/portrait-person-wearing-graphic-eye-makeup.jpg"
-              alt=""
+              alt="profile picture"
+              sizes="(max-width: 640px) 100vw, 640px"
             />
             <span className="bottom-0 left-6 absolute  w-2.5 h-2.5 bg-gradient-to-br from-emerald-200 to-indigo-300 rounded-full shadow border border-white"></span>
           </div>

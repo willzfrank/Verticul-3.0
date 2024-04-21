@@ -190,7 +190,7 @@ const CourseCardContainer = (props: Props) => {
 
       <div className="w-full mt-2 p-2 justify-center  items-center gap-2 flex">
         <Link
-          href="/CourseInProgress"
+          href="/coursedetails"
           className="w-[255px] p-[0.50px] rounded border border-indigo-700 flex-col justify-start items-start gap-px inline-flex"
         >
           <div className="self-stretch h-[26px] px-2 py-1 bg-gradient-to-b from-indigo-400 to-indigo-500 rounded shadow border border-violet-400 flex-col justify-center items-center gap-px flex">

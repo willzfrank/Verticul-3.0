@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import book from '../../../public/assets/book.svg'
 import folder from '../../../public/assets/folder.png'
 import verify from '../../../public/assets/verify.svg'
@@ -13,13 +15,21 @@ import question from '../../../public/assets/message-question.svg'
 import Image from 'next/image'
 
 import { Flex, Progress } from 'antd'
+import Link from 'next/link'
 
-type Props = {}
+const Sidebar = () => {
+  const [isCourseDetailsOpen, setIsCourseDetailsOpen] = useState(false)
 
-const Sidebar = (props: Props) => {
+  const toggleDropdown = () => {
+    setIsCourseDetailsOpen((prev) => !prev)
+  }
   return (
     <div className="sticky  bg-white">
-      <div className="w-[228px] px-2 py-1.5 mx-5 bg-gray-100 rounded justify-start items-center gap-2 inline-flex">
+      {/* Course Details */}
+      <div
+        className="w-[228px] px-2 py-1.5 mx-4 my-1 bg-gray-100 rounded justify-start items-center gap-2 inline-flex  cursor-pointer"
+        onClick={toggleDropdown}
+      >
         <div className="w-5 h-5 justify-center items-center flex relative">
           <Image src={book} layout="fill" alt="book svg" />
         </div>
@@ -34,7 +44,7 @@ const Sidebar = (props: Props) => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6 cursor-pointer"
+              className="w-6 h-6"
             >
               <path
                 strokeLinecap="round"
@@ -46,44 +56,49 @@ const Sidebar = (props: Props) => {
         </div>
       </div>
 
-      <div className="ml-10 mt-2.5  justify-start items-start gap-3 inline-flex">
-        <div className="w-[0px] h-[93px] relative">
-          <div className="w-[93px] h-[0px] left-0 top-0 absolute origin-top-left rotate-90 border border-gray-200"></div>
+      {isCourseDetailsOpen && (
+        <div className="ml-10 mt-2.5  justify-start items-start gap-3 inline-flex">
+          <div className="w-[0px] h-[93px] relative">
+            <div className="w-[93px] h-[0px] left-0 top-0 absolute origin-top-left rotate-90 border border-gray-200"></div>
+          </div>
+          <div className="flex-col justify-start items-start gap-[11px] inline-flex animate__animated animate__fadeIn ">
+            <div className="w-[98px] justify-between items-center inline-flex cursor-pointer">
+              <div className="text-gray-500 text-base font-medium font-['Inter'] leading-normal">
+                Module 1
+              </div>
+              <div className="w-[13.25px] h-[13.25px] relative">
+                <div className="w-[13.25px] h-[13.25px] left-0 top-0 absolute bg-gradient-to-b from-emerald-400 via-emerald-400 to-green-700 rounded-full" />
+                <div className="w-[6.31px] h-[6.31px] left-[3.34px] top-[3.34px] absolute bg-gradient-to-t from-slate-300 to-teal-50 rounded-full shadow" />
+              </div>
+            </div>
+            <div className="w-[98px] justify-between items-center inline-flex cursor-pointer">
+              <div className="text-gray-500 text-base font-medium font-['Inter'] leading-normal">
+                Module 2
+              </div>
+              <div className="w-[13.25px] h-[13.25px] relative">
+                <div className="w-[13.25px] h-[13.25px] left-0 top-0 absolute bg-gradient-to-b from-amber-200 via-orange-300 to-orange-400 rounded-full" />
+                <div className="w-[6.31px] h-[6.31px] left-[3.34px] top-[3.34px] absolute bg-gradient-to-t from-amber-100 to-orange-50 rounded-full shadow" />
+              </div>
+            </div>
+            <div className="w-[98px] justify-between items-center inline-flex cursor-pointer">
+              <div className="text-gray-500 text-base font-medium font-['Inter'] leading-normal">
+                Module 3
+              </div>
+              <div className="w-[13.25px] h-[13.25px] relative">
+                <div className="w-[13.25px] h-[13.25px] left-0 top-0 absolute bg-gradient-to-b from-violet-300 via-indigo-300 to-indigo-800 rounded-full" />
+                <div className="w-[6.31px] h-[6.31px] left-[3.34px] top-[3.34px] absolute bg-gradient-to-t from-indigo-100 to-slate-50 rounded-full shadow" />
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex-col justify-start items-start gap-[11px] inline-flex">
-          <div className="w-[98px] justify-between items-center inline-flex">
-            <div className="text-gray-500 text-base font-medium font-['Inter'] leading-normal">
-              Module 1
-            </div>
-            <div className="w-[13.25px] h-[13.25px] relative">
-              <div className="w-[13.25px] h-[13.25px] left-0 top-0 absolute bg-gradient-to-b from-emerald-400 via-emerald-400 to-green-700 rounded-full" />
-              <div className="w-[6.31px] h-[6.31px] left-[3.34px] top-[3.34px] absolute bg-gradient-to-t from-slate-300 to-teal-50 rounded-full shadow" />
-            </div>
-          </div>
-          <div className="w-[98px] justify-between items-center inline-flex">
-            <div className="text-gray-500 text-base font-medium font-['Inter'] leading-normal">
-              Module 2
-            </div>
-            <div className="w-[13.25px] h-[13.25px] relative">
-              <div className="w-[13.25px] h-[13.25px] left-0 top-0 absolute bg-gradient-to-b from-amber-200 via-orange-300 to-orange-400 rounded-full" />
-              <div className="w-[6.31px] h-[6.31px] left-[3.34px] top-[3.34px] absolute bg-gradient-to-t from-amber-100 to-orange-50 rounded-full shadow" />
-            </div>
-          </div>
-          <div className="w-[98px] justify-between items-center inline-flex">
-            <div className="text-gray-500 text-base font-medium font-['Inter'] leading-normal">
-              Module 3
-            </div>
-            <div className="w-[13.25px] h-[13.25px] relative">
-              <div className="w-[13.25px] h-[13.25px] left-0 top-0 absolute bg-gradient-to-b from-violet-300 via-indigo-300 to-indigo-800 rounded-full" />
-              <div className="w-[6.31px] h-[6.31px] left-[3.34px] top-[3.34px] absolute bg-gradient-to-t from-indigo-100 to-slate-50 rounded-full shadow" />
-            </div>
-          </div>
-        </div>
-      </div>
+      )}
 
       <div className="px-4 pb-2 border-b border-gray-200 flex-col justify-start items-start gap-px inline-flex">
         <div className="flex-col justify-start items-start gap-1 flex">
-          <div className="w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex">
+          <Link
+            href="/assessment"
+            className="w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer"
+          >
             <div className="w-5 h-5 justify-center items-center relative flex">
               <Image src={folder} layout="fill" alt="folder svg" />
             </div>
@@ -99,8 +114,11 @@ const Sidebar = (props: Props) => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex">
+          </Link>
+          <Link
+            href="/quiz"
+            className="w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer"
+          >
             <div className="w-5 h-5 justify-center items-center flex relative">
               <Image src={question} layout="fill" alt="question svg" />
             </div>
@@ -116,8 +134,11 @@ const Sidebar = (props: Props) => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex">
+          </Link>
+          <Link
+            href="/scores"
+            className="w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer"
+          >
             <div className="w-5 h-5 justify-center items-center flex relative">
               <Image src={verify} layout="fill" alt="verify svg" />
             </div>
@@ -126,8 +147,11 @@ const Sidebar = (props: Props) => {
                 Scores
               </span>
             </div>
-          </div>
-          <div className="w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex">
+          </Link>
+          <Link
+            href="/certificate"
+            className="w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer"
+          >
             <div className="w-5 h-5 justify-center items-center flex relative">
               <Image src={award} layout="fill" alt="award svg" />
             </div>
@@ -143,7 +167,7 @@ const Sidebar = (props: Props) => {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
 
