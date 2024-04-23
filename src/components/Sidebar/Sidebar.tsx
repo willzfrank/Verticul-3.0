@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import book from '../../../public/assets/book.svg'
+import { usePathname } from 'next/navigation'
 import folder from '../../../public/assets/folder.png'
 import verify from '../../../public/assets/verify.svg'
 import award from '../../../public/assets/award.svg'
@@ -19,22 +20,35 @@ import Link from 'next/link'
 
 const Sidebar = () => {
   const [isCourseDetailsOpen, setIsCourseDetailsOpen] = useState(false)
+  const [active, setActive] = useState('')
+  const pathname = usePathname()
 
   const toggleDropdown = () => {
     setIsCourseDetailsOpen((prev) => !prev)
+  }
+
+  const toggleActive = (item: React.SetStateAction<string>) => {
+    setActive(active === item ? '' : item)
   }
   return (
     <div className="sticky  bg-white">
       {/* Course Details */}
       <div
-        className="w-[228px] px-2 py-1.5 mx-4 my-1 bg-gray-100 rounded justify-start items-center gap-2 inline-flex  cursor-pointer"
-        onClick={toggleDropdown}
+        className={`w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer ml-4 ${
+          active === 'coursedetails' || pathname === '/coursedetails'
+            ? 'bg-gray-100 text-[#101828]'
+            : 'text-gray-500'
+        }`}
+        onClick={() => {
+          toggleDropdown()
+          toggleActive('courseDetails')
+        }}
       >
         <div className="w-5 h-5 justify-center items-center flex relative">
           <Image src={book} layout="fill" alt="book svg" />
         </div>
         <div className=" w-full h-5 justify-between items-center flex">
-          <span className="text-gray-900 text-sm font-medium font-['Inter'] leading-tight">
+          <span className=" text-sm font-medium font-['Inter'] leading-tight">
             Course Details
           </span>
           <div className="w-3 h-3 justify-center items-center flex">
@@ -62,7 +76,10 @@ const Sidebar = () => {
             <div className="w-[93px] h-[0px] left-0 top-0 absolute origin-top-left rotate-90 border border-gray-200"></div>
           </div>
           <div className="flex-col justify-start items-start gap-[11px] inline-flex animate__animated animate__fadeIn ">
-            <div className="w-[98px] justify-between items-center inline-flex cursor-pointer">
+            <Link
+              href="/coursedetails"
+              className="w-[98px] justify-between items-center inline-flex cursor-pointer"
+            >
               <div className="text-gray-500 text-base font-medium font-['Inter'] leading-normal">
                 Module 1
               </div>
@@ -70,8 +87,11 @@ const Sidebar = () => {
                 <div className="w-[13.25px] h-[13.25px] left-0 top-0 absolute bg-gradient-to-b from-emerald-400 via-emerald-400 to-green-700 rounded-full" />
                 <div className="w-[6.31px] h-[6.31px] left-[3.34px] top-[3.34px] absolute bg-gradient-to-t from-slate-300 to-teal-50 rounded-full shadow" />
               </div>
-            </div>
-            <div className="w-[98px] justify-between items-center inline-flex cursor-pointer">
+            </Link>
+            <Link
+              href="/coursedetails"
+              className="w-[98px] justify-between items-center inline-flex cursor-pointer"
+            >
               <div className="text-gray-500 text-base font-medium font-['Inter'] leading-normal">
                 Module 2
               </div>
@@ -79,8 +99,11 @@ const Sidebar = () => {
                 <div className="w-[13.25px] h-[13.25px] left-0 top-0 absolute bg-gradient-to-b from-amber-200 via-orange-300 to-orange-400 rounded-full" />
                 <div className="w-[6.31px] h-[6.31px] left-[3.34px] top-[3.34px] absolute bg-gradient-to-t from-amber-100 to-orange-50 rounded-full shadow" />
               </div>
-            </div>
-            <div className="w-[98px] justify-between items-center inline-flex cursor-pointer">
+            </Link>
+            <Link
+              href="/coursedetails"
+              className="w-[98px] justify-between items-center inline-flex cursor-pointer"
+            >
               <div className="text-gray-500 text-base font-medium font-['Inter'] leading-normal">
                 Module 3
               </div>
@@ -88,7 +111,7 @@ const Sidebar = () => {
                 <div className="w-[13.25px] h-[13.25px] left-0 top-0 absolute bg-gradient-to-b from-violet-300 via-indigo-300 to-indigo-800 rounded-full" />
                 <div className="w-[6.31px] h-[6.31px] left-[3.34px] top-[3.34px] absolute bg-gradient-to-t from-indigo-100 to-slate-50 rounded-full shadow" />
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       )}
@@ -97,7 +120,12 @@ const Sidebar = () => {
         <div className="flex-col justify-start items-start gap-1 flex">
           <Link
             href="/assessment"
-            className="w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer"
+            className={`w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer ${
+              active === 'assessment' || pathname === '/assessment'
+                ? 'bg-gray-100 text-medium text-[#101828]'
+                : 'text-gray-500'
+            }`}
+            onClick={() => toggleActive('assessment')}
           >
             <div className="w-5 h-5 justify-center items-center relative flex">
               <Image src={folder} layout="fill" alt="folder svg" />
@@ -108,7 +136,7 @@ const Sidebar = () => {
                   Asssement
                 </span>
                 <div className="h-[13px] px-px bg-amber-50 rounded-sm shadow justify-center items-center flex">
-                  <span className="w-3 h-[17px] text-amber-700 text-[10px] font-normal font-['Inter'] leading-tight">
+                  <span className="w-3 h-[17px] text-amber-700 flex items-center justify-center text-[10px] font-normal font-['Inter'] leading-tight">
                     10
                   </span>
                 </div>
@@ -117,7 +145,12 @@ const Sidebar = () => {
           </Link>
           <Link
             href="/quiz"
-            className="w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer"
+            className={`w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer ${
+              active === 'quiz' || pathname === '/quiz'
+                ? 'bg-gray-100 text-[#101828]'
+                : 'text-gray-500'
+            }`}
+            onClick={() => toggleActive('quiz')}
           >
             <div className="w-5 h-5 justify-center items-center flex relative">
               <Image src={question} layout="fill" alt="question svg" />
@@ -127,8 +160,8 @@ const Sidebar = () => {
                 <span className="text-gray-500 text-sm font-medium font-['Inter'] leading-tight">
                   Quiz
                 </span>
-                <div className="pl-1 bg-emerald-50 rounded-sm shadow justify-end items-center flex">
-                  <span className="w-3 h-[17px] text-emerald-700 text-[10px] font-normal font-['Inter'] leading-tight">
+                <div className=" bg-emerald-50 rounded-sm shadow justify-end items-center flex">
+                  <span className="w-3 h-[17px] text-emerald-700 flex items-center justify-center text-[10px] font-normal font-['Inter'] leading-tight">
                     5
                   </span>
                 </div>
@@ -137,27 +170,37 @@ const Sidebar = () => {
           </Link>
           <Link
             href="/scores"
-            className="w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer"
+            className={`w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer ${
+              active === 'scores' || pathname === '/scores'
+                ? 'bg-gray-100 text-[#101828]'
+                : 'text-gray-500'
+            }`}
+            onClick={() => toggleActive('scores')}
           >
             <div className="w-5 h-5 justify-center items-center flex relative">
               <Image src={verify} layout="fill" alt="verify svg" />
             </div>
             <div className="h-5 justify-start items-center gap-2 flex">
-              <span className="text-gray-500 text-sm font-medium font-['Inter'] leading-tight">
+              <span className=" text-sm font-medium font-['Inter'] leading-tight">
                 Scores
               </span>
             </div>
           </Link>
           <Link
             href="/certificate"
-            className="w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer"
+            className={`w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer ${
+              active === 'certificate' || pathname === '/certificate'
+                ? 'bg-gray-100 text-medium text-[#101828]'
+                : 'text-gray-500'
+            }`}
+            onClick={() => toggleActive('certificate')}
           >
             <div className="w-5 h-5 justify-center items-center flex relative">
               <Image src={award} layout="fill" alt="award svg" />
             </div>
             <div className="w-full h-5 justify-start items-center gap-2 flex">
               <div className="w-full h-5 justify-between items-center flex">
-                <div className="text-gray-500 text-sm font-medium font-['Inter'] leading-tight">
+                <div className=" text-sm font-medium font-['Inter'] leading-tight">
                   Certificate
                 </div>
                 <div className="w-[12.93px] h-[12.93px]">

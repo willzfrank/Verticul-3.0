@@ -4,11 +4,13 @@ type ProgressTrackerCardProps = {
   progress: string
   title: string
   image: string
+  setIsOpenModal: (value: boolean) => void
 }
 const ProgressTrackerCard: React.FC<ProgressTrackerCardProps> = ({
   progress,
   title,
   image,
+  setIsOpenModal,
 }) => {
   let bgGradient
   let borderColor
@@ -24,8 +26,15 @@ const ProgressTrackerCard: React.FC<ProgressTrackerCardProps> = ({
     borderColor = 'border-green-50'
   }
 
+  const handleCardClick = () => {
+    setIsOpenModal(true)
+  }
+
   return (
-    <div className="w-[250px] h-[117px] px-4 py-2 bg-white rounded-lg shadow flex-col justify-center items-start gap-1 inline-flex">
+    <div
+      className="w-[250px] h-[117px] px-4 py-2 bg-white rounded-lg shadow flex-col justify-center items-start gap-1 inline-flex cursor-pointer"
+      onClick={handleCardClick}
+    >
       <div className="justify-start items-start gap-4 inline-flex">
         <div className="w-[48.50px] h-[48.50px]">
           <div
