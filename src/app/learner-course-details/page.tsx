@@ -1,28 +1,28 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react'
-import dynamic from 'next/dynamic'
-import CurriculumProgressTracker from '@/components/ProgressTracker/CurriculumProgressTracker'
-import ProgressTrackerCard from '@/components/ProgressTracker/ProgressTrackerCard'
-import NavbarBanner from '@/components/navbar/NavbarBanner'
-import completedImage from '../../../public/assets/completedCourseCard.svg'
-import EmptyCourse from '@/components/EmptyCourse'
-import CompletedCourseModal from '@/components/CompletedCourseModal'
-import UncompletedCourseModal from '@/components/UncompletedCourseModal'
+import React, { useState } from "react";
+import dynamic from "next/dynamic";
+import CurriculumProgressTracker from "@/components/ProgressTracker/CurriculumProgressTracker";
+import ProgressTrackerCard from "@/components/ProgressTracker/ProgressTrackerCard";
+import NavbarBanner from "@/components/navbar/NavbarBanner";
+import completedImage from "../../../public/assets/completedCourseCard.svg";
+import EmptyCourse from "@/components/EmptyCourse";
+import CompletedCourseModal from "@/components/CompletedCourseModal";
+import UncompletedCourseModal from "@/components/UncompletedCourseModal";
 
 // Dynamically import CourseTitle
-const CourseTitle = dynamic(() => import('@/components/CourseTitle'), {
+const CourseTitle = dynamic(() => import("@/components/CourseTitle"), {
   ssr: false,
-})
+});
 const CourseCardContainer = dynamic(
-  () => import('@/components/CourseCardContainer'),
+  () => import("@/components/CourseCardContainer"),
   { ssr: false }
-)
+);
 
 const LearnerCourseDetails = () => {
-  const [userPaidForCourse, setUserPaidForCourse] = useState(true)
-  const [IsOpenCompletedModal, setIsOpenCompletedModal] = useState(false)
-  const [IsOpenUncompletedModal, setIsOpenUncompletedModal] = useState(false)
+  const [userPaidForCourse, setUserPaidForCourse] = useState(true);
+  const [IsOpenCompletedModal, setIsOpenCompletedModal] = useState(false);
+  const [IsOpenUncompletedModal, setIsOpenUncompletedModal] = useState(false);
 
   return (
     <main>
@@ -76,7 +76,7 @@ const LearnerCourseDetails = () => {
         setIsOpenUncompletedModal={setIsOpenUncompletedModal}
       />
     </main>
-  )
-}
+  );
+};
 
-export default LearnerCourseDetails
+export default LearnerCourseDetails;
