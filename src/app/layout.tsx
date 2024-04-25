@@ -1,20 +1,16 @@
-import type { Metadata } from 'next'
-import './globals.css'
-import dynamic from 'next/dynamic'
-
-const Navbar = dynamic(() => import('@/components/navbar/Navbar'), {
-  ssr: false,
-})
+import type { Metadata } from "next";
+import "./globals.css";
+import Navbar from "@/components/navbar/Navbar";
 
 export const metadata: Metadata = {
-  title: 'Verticul',
-  description: '',
-}
+  title: "Verticul",
+  description: "",
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -23,5 +19,5 @@ export default function RootLayout({
         {children}
       </body>
     </html>
-  )
+  );
 }

@@ -1,20 +1,20 @@
 interface ProgressBarProps {
-  percentage: number
+  percentage: number;
 }
 
 export const ProgressBar = ({ percentage }: ProgressBarProps) => {
   const renderBars = () => {
-    const numBars = 15
+    const numBars = 15;
     const bars = Array.from({ length: numBars }, (_, index) => (
       <div
         key={index}
         className="w-[1.8px] h-[9px] mx-[0.5px] bg-gray-300 rounded-sm"
       />
-    ))
-    return bars
-  }
+    ));
+    return bars;
+  };
 
-  const remainingPercentage = 100 - percentage
+  const remainingPercentage = 100 - percentage;
 
   return (
     <div className="w-[172px] h-[18px] justify-start items-center gap-2 inline-flex">
@@ -34,5 +34,5 @@ export const ProgressBar = ({ percentage }: ProgressBarProps) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

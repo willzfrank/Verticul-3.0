@@ -1,27 +1,27 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react'
-import flower from '../../public/assets/tropical-flora-plants.jpg'
-import Image from 'next/image'
-import user from '../../public/assets/user-octagon.png'
-import { Avatar, Modal, Tooltip } from 'antd'
-import share from '../../public/assets/share.svg'
-import Link from 'next/link'
-import ShareModal from './ShareModal/ShareModal'
+import React, { useState } from "react";
 
-type Props = {}
+import Image from "next/image";
+import user from "../../public/assets/user-octagon.png";
+import { Avatar, Modal, Tooltip } from "antd";
+import share from "../../public/assets/share.svg";
+import Link from "next/link";
+import ShareModal from "./ShareModal/ShareModal";
+
+type Props = {};
 
 const CourseCardContainer = (props: Props) => {
-  const [shareModal, setShareModal] = useState(false)
+  const [shareModal, setShareModal] = useState(false);
 
   return (
-    <div className="w-[350px] h-[430px] bg-gray-100 rounded-xl shadow border border-gray-200 flex-col inline-flex">
+    <div className="w-[350px] h-[430px] bg-gray-100 rounded-xl  shadow-md   border border-gray-200 flex-col inline-flex">
       <div className="w-[351px] h-[374px] bg-white rounded-xl border border-gray-300">
         {/* COURSE THUMBNAIL */}
         <div>
           <div className="w-[350px] h-[200px] relative">
             <Image
-              src={flower}
+              src="/assets/course-thumbnail.png"
               layout="fill"
               objectFit="cover"
               alt="screen"
@@ -38,7 +38,7 @@ const CourseCardContainer = (props: Props) => {
                   <h2 className="text-gray-900 text-sm font-medium font-['Inter'] leading-tight">
                     Digital Marketing Fundamentals
                   </h2>
-                  <p className="self-stretch h-10 text-gray-500 text-sm font-normal font-['Inter'] leading-tight">
+                  <p className="self-stretch h-10 text-gray-500 text-sm font-normal font-['Inter'] leading-tight w-[90%]">
                     Master the essentials of digital marketing including SEO,
                     social media...
                   </p>
@@ -46,7 +46,7 @@ const CourseCardContainer = (props: Props) => {
                 <div className="justify-start items-center gap-2 inline-flex">
                   <div>
                     <span className="text-slate-700 text-xs font-medium font-['Inter'] leading-[18px]">
-                      4{' '}
+                      4{" "}
                     </span>
                     <span className="text-gray-500 text-xs font-medium font-['Inter'] leading-[18px]">
                       Modules
@@ -137,7 +137,7 @@ const CourseCardContainer = (props: Props) => {
                       </Tooltip>
                       <Tooltip title="Ant User" placement="top">
                         <Avatar
-                          style={{ backgroundColor: '#f56a00' }}
+                          style={{ backgroundColor: "#f56a00" }}
                           className="w-6 h-6 rounded-full border border-white"
                         >
                           K
@@ -145,13 +145,13 @@ const CourseCardContainer = (props: Props) => {
                       </Tooltip>
                       <Tooltip title="Ant User" placement="top">
                         <Avatar
-                          style={{ backgroundColor: '#87d068' }}
+                          style={{ backgroundColor: "#87d068" }}
                           className="w-6 h-6 rounded-full border border-white"
                         />
                       </Tooltip>
                       <Tooltip title="Ant User" placement="top">
                         <Avatar
-                          style={{ backgroundColor: '#1677ff' }}
+                          style={{ backgroundColor: "#1677ff" }}
                           className="w-6 h-6 rounded-full border border-white"
                         />
                       </Tooltip>
@@ -190,7 +190,7 @@ const CourseCardContainer = (props: Props) => {
 
       <div className="w-full mt-2 p-2 justify-center  items-center gap-2 flex">
         <Link
-          href="/coursedetails"
+          href="/course-details"
           className="w-[255px] p-[0.50px] rounded border border-indigo-700 flex-col justify-start items-start gap-px inline-flex"
         >
           <div className="self-stretch h-[26px] px-2 py-1 bg-gradient-to-b from-indigo-400 to-indigo-500 rounded shadow border border-violet-400 flex-col justify-center items-center gap-px flex">
@@ -221,7 +221,7 @@ const CourseCardContainer = (props: Props) => {
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CourseCardContainer
+export default CourseCardContainer;

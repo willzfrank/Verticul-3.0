@@ -1,27 +1,27 @@
-'use client'
+"use client";
 
-import React from 'react'
-import savedNotes from '../../public/assets/savedNotes.svg'
-import timer from '../../public/assets/timer.png'
-import miniBook from '../../public/assets/miniBook.svg'
-import command from '../../public/assets/command.svg'
-import courseImage from '../../public/assets/courseImage.png'
-import learningObjectiveBook from '../../public/assets/learningObjectiveBook.svg'
-import user from '../../public/assets/user-octagon.png'
+import React from "react";
+import savedNotes from "../../public/assets/savedNotes.svg";
+import timer from "../../public/assets/timer.png";
+import miniBook from "../../public/assets/miniBook.svg";
+import command from "../../public/assets/command.svg";
+import courseImage from "../../public/assets/courseImage.png";
+import learningObjectiveBook from "../../public/assets/learningObjectiveBook.svg";
+import user from "../../public/assets/user-octagon.png";
 
-import Image from 'next/image'
+import Image from "next/image";
 
-import ReactPlayer from 'react-player/lazy'
-import Link from 'next/link'
-import CourseDetailsTab from './CourseDetailsTab'
-import { Avatar, Flex, Progress, Tooltip } from 'antd'
+import ReactPlayer from "react-player/lazy";
+import Link from "next/link";
+import CourseDetailsTab from "./CourseDetailsTab";
+import { Avatar, Flex, Progress, Tooltip } from "antd";
 
 type Props = {
-  handleStartLearning: () => void // Define the type of handleStartLearning
-}
+  handleStartLearning: () => void; // Define the type of handleStartLearning
+};
 
 const CourseDescriptionWidget = ({ handleStartLearning }: Props) => {
-  const [isSubscribed, setIsSubscribed] = React.useState(true)
+  const [isSubscribed, setIsSubscribed] = React.useState(true);
   return (
     <div className="w-[95%]  ml-10">
       <div className="flex items-center justify-between">
@@ -104,13 +104,13 @@ const CourseDescriptionWidget = ({ handleStartLearning }: Props) => {
               </span>
               <div className="flex items-center">
                 <span className="text-slate-700 text-sm font-medium font-['Inter'] leading-tight">
-                  {' '}
+                  {" "}
                   20%
                 </span>
                 <div className="w-[25%] bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                   <div
                     className="bg-blue-600 h-2.5 rounded-full"
-                    style={{ width: ' 45%' }}
+                    style={{ width: " 45%" }}
                   ></div>
                 </div>
               </div>
@@ -125,7 +125,7 @@ const CourseDescriptionWidget = ({ handleStartLearning }: Props) => {
                 </div>
                 <div>
                   <span className="text-gray-500 text-sm font-normal font-['Inter'] leading-tight">
-                    Duration:{' '}
+                    Duration:{" "}
                   </span>
                   <span className="text-gray-900 text-sm font-normal font-['Inter'] leading-tight">
                     1Week
@@ -212,7 +212,7 @@ const CourseDescriptionWidget = ({ handleStartLearning }: Props) => {
                   </div>
                   <div className="flex items-center justify-center gap-2  h-[25px] pr-2">
                     <h3 className="text-blue-700 text-sm font-normal font-['Inter'] leading-tight">
-                      Module{' '}
+                      Module{" "}
                     </h3>
                     <span className="text-blue-900 text-sm font-normal font-['Inter'] leading-tight">
                       4
@@ -276,20 +276,29 @@ const CourseDescriptionWidget = ({ handleStartLearning }: Props) => {
           <div className="h-full w-full my-5 relative">
             <ReactPlayer
               url="https://v3.cdnpk.net/videvo_files/video/free/2012-09/large_preview/hd1823.mp4"
-              light={<Image src={courseImage} alt="Thumbnail" layout="fil" />}
+              light={
+                <Image
+                  src="/assets/course-thumbnail.png"
+                  alt="Thumbnail"
+                  sizes="100vw"
+                  width="0"
+                  height="0"
+                  className="w-full h-full"
+                />
+              }
               width="100%"
-              height="100%"
+              height="400px"
               controls
               playing={true}
               muted
               config={{
                 file: {
                   attributes: {
-                    controlsList: 'nodownload',
+                    controlsList: "nodownload",
                   },
                 },
               }}
-              style={{ borderRadius: '20px', border: '1px solid grey' }}
+              style={{ borderRadius: "20px" }}
             />
           </div>
           {/* COURSE DETAILS DIV */}
@@ -311,7 +320,7 @@ const CourseDescriptionWidget = ({ handleStartLearning }: Props) => {
                   seeking to refresh your knowledge or a beginner eager to
                   explore the digital landscape, this course provides the tools
                   and insights needed to thrive in today&apos;s digital
-                  marketplace.{' '}
+                  marketplace.{" "}
                 </div>
               </p>
               {/* READ ABT INSTRUCTOR HERE */}
@@ -330,7 +339,7 @@ const CourseDescriptionWidget = ({ handleStartLearning }: Props) => {
                       </Tooltip>
                       <Tooltip title="Ant User" placement="top">
                         <Avatar
-                          style={{ backgroundColor: '#f56a00' }}
+                          style={{ backgroundColor: "#f56a00" }}
                           className="w-6 h-6 rounded-full border border-white"
                         >
                           K
@@ -338,13 +347,13 @@ const CourseDescriptionWidget = ({ handleStartLearning }: Props) => {
                       </Tooltip>
                       <Tooltip title="Ant User" placement="top">
                         <Avatar
-                          style={{ backgroundColor: '#87d068' }}
+                          style={{ backgroundColor: "#87d068" }}
                           className="w-6 h-6 rounded-full border border-white"
                         />
                       </Tooltip>
                       <Tooltip title="Ant User" placement="top">
                         <Avatar
-                          style={{ backgroundColor: '#1677ff' }}
+                          style={{ backgroundColor: "#1677ff" }}
                           className="w-6 h-6 rounded-full border border-white"
                         />
                       </Tooltip>
@@ -452,7 +461,7 @@ const CourseDescriptionWidget = ({ handleStartLearning }: Props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CourseDescriptionWidget
+export default CourseDescriptionWidget;

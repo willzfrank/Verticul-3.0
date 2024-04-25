@@ -1,13 +1,31 @@
-import React from 'react'
-import logo from '../../../public/assets/verticul_logo.svg'
-import spark from '../../../public/assets/spark.svg'
-import Image from 'next/image'
-import Link from 'next/link'
+import React from "react";
+import logo from "../../../public/assets/verticul_logo.svg";
+import Image from "next/image";
+import Link from "next/link";
+
+const navlnks = [
+  {
+    name: "Forum",
+    link: "#",
+  },
+  {
+    name: "Courses",
+    link: "course-details",
+  },
+  {
+    name: "New",
+    link: "#",
+    image: "/assets/spark.svg",
+  },
+  {
+    name: "Blog",
+    link: "#",
+  },
+];
 
 const Navbar = () => {
   return (
     <nav className=" h-16 px-12 py-4 bg-white flex items-center justify-between ">
-      {/* Logo */}
       <Link href="/" className="flex items-center gap-2">
         <div className="w-[30px] h-[30px] p-0.5 bg-white rounded shadow border border-indigo-50 justify-center items-center inline-flex">
           <div className="grow shrink basis-0 self-stretch p-1 bg-violet-50 rounded-sm justify-center items-center inline-flex">
@@ -22,23 +40,18 @@ const Navbar = () => {
       {/* Nav List */}
       <div className="ml-[100px] w-max h-[34px] px-10 py-1.5 bg-white rounded-[32px] shadow border border-gray-200 flex-col justify-start items-start gap-px inline-flex">
         <div className="flex items-center justify-between gap-12 ">
-          <div className="text-gray-500 text-sm font-medium font-Inter leading-tight">
-            Forum
-          </div>
-          <div className="text-gray-500 text-sm font-medium font-Inter leading-tight">
-            Courses
-          </div>
-          <div className="flex items-center gap-1">
-            <div className="text-gray-500 text-sm font-medium font-Inter leading-tight">
-              New
-            </div>
-            <div className="w-4 h-4">
-              <Image src={spark} alt="spark" width={20} height={20} />
-            </div>
-          </div>
-          <div className="text-gray-500 text-sm font-medium font-Inter leading-tight">
-            Blog
-          </div>
+          {navlnks.map((nav, idx) => (
+            <Link href={nav.link} key={idx} className="flex items-center gap-1">
+              <div className="text-gray-500 text-sm font-medium font-Inter leading-tight">
+                {nav.name}
+              </div>
+              <div className="w-4 h-4">
+                {nav.image && (
+                  <Image src={nav.image} alt="spark" width={20} height={20} />
+                )}
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
 
@@ -117,7 +130,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
