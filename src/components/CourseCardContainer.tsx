@@ -15,20 +15,17 @@ const CourseCardContainer = (props: Props) => {
   const [shareModal, setShareModal] = useState(false);
 
   return (
-    <div className="w-[350px] h-[430px] bg-gray-100 rounded-xl  shadow-md   border border-gray-200 flex-col inline-flex">
-      <div className="w-[351px] h-[374px] bg-white rounded-xl border border-gray-300">
-        {/* COURSE THUMBNAIL */}
-        <div>
-          <div className="w-[350px] h-[200px] relative">
-            <Image
-              src="/assets/course-thumbnail.png"
-              layout="fill"
-              objectFit="cover"
-              alt="screen"
-              className="rounded-t-md"
-            />
-          </div>
-        </div>
+    <div className=" bg-gray-100 rounded-xl  shadow-md   border border-gray-200 flex-col inline-flex">
+      <div className="rounded-xl ">
+        <Image
+          src="/assets/course-thumbnail.png"
+          alt="course-thumbnail"
+          sizes="100vw"
+          width="0"
+          height="0"
+          className="rounded-t-xl  w-full h-[200px] object-cover"
+        />
+
         {/* COURSE DESCRIPTION */}
         <div className="self-stretch flex-col justify-start items-start flex">
           <div className="self-stretch  py-1 bg-white flex-col justify-start items-start gap-2 flex">

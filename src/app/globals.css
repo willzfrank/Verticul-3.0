@@ -33,6 +33,11 @@
   .fbc {
     @apply flex justify-between items-center;
   }
+  .wrapper {
+    @apply w-[90%] max-w-[1440px] mx-auto;
+  }
+
+  /* miscellaneous */
 
   .no-scrollbar::-webkit-scrollbar {
     display: none;

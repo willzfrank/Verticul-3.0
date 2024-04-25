@@ -2,15 +2,17 @@ import React from "react";
 import logo from "../../../public/assets/verticul_logo.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { HiOutlineShoppingCart } from "react-icons/hi";
+import { RxCaretDown } from "react-icons/rx";
 
 const navlnks = [
   {
     name: "Forum",
-    link: "#",
+    link: "forum",
   },
   {
     name: "Courses",
-    link: "course-details",
+    link: "all-courses",
   },
   {
     name: "New",
@@ -19,13 +21,13 @@ const navlnks = [
   },
   {
     name: "Blog",
-    link: "#",
+    link: "blog",
   },
 ];
 
 const Navbar = () => {
   return (
-    <nav className=" h-16 px-12 py-4 bg-white flex items-center justify-between ">
+    <nav className="sticky  z-30 top-0 h-16 px-12 py-4 bg-white flex items-center justify-between border ">
       <Link href="/" className="flex items-center gap-2">
         <div className="w-[30px] h-[30px] p-0.5 bg-white rounded shadow border border-indigo-50 justify-center items-center inline-flex">
           <div className="grow shrink basis-0 self-stretch p-1 bg-violet-50 rounded-sm justify-center items-center inline-flex">
@@ -42,7 +44,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between gap-12 ">
           {navlnks.map((nav, idx) => (
             <Link href={nav.link} key={idx} className="flex items-center gap-1">
-              <div className="text-gray-500 text-sm font-medium font-Inter leading-tight">
+              <div className={`text-gray-500 text-sm font-medium `}>
                 {nav.name}
               </div>
               <div className="w-4 h-4">
@@ -79,53 +81,31 @@ const Navbar = () => {
         <div className="w-[21px] h-[0px] rotate-90 border border-gray-200"></div>
 
         {/* Cart */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.7}
-          stroke="#667085"
-          className="w-6 h-6 cursor-pointer"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
-          />
-        </svg>
+        <HiOutlineShoppingCart
+          size={22}
+          color="#667085"
+          className="cursor-pointer"
+        />
 
-        {/* PROFILE DROP DOWN */}
         <div className="flex items-center gap-2 w-max h-9 p-0.5 bg-white rounded-3xl shadow border border-gray-300 justify-start ">
           <div className="relative w-8 h-8 ">
             <Image
-              className=" rounded-full"
-              fill={true}
+              className=" rounded-full w-8 h-8 object-cover "
               src="/assets/portrait-person-wearing-graphic-eye-makeup.jpg"
               alt="profile picture"
-              sizes="(max-width: 640px) 100vw, 640px"
+              sizes="100vw"
+              width="0"
+              height="0"
             />
             <span className="bottom-0 left-6 absolute  w-2.5 h-2.5 bg-gradient-to-br from-emerald-200 to-indigo-300 rounded-full shadow border border-white"></span>
           </div>
+
           <div className="flex items-center gap-2">
             <p className="text-slate-700 text-sm font-normal font-Inter leading-tight">
               Michael Ross
             </p>
-            <div className="w-3 h-3 flex items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6 cursor-pointer"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                />
-              </svg>
-            </div>
+
+            <RxCaretDown size={22} />
           </div>
         </div>
       </div>

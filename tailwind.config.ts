@@ -16,6 +16,7 @@ const config: Config = {
       },
       colors: {
         "u-purple": "#5555F9",
+        "u-slate": "#F9FAFB",
       },
     },
   },

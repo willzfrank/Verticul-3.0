@@ -10,8 +10,8 @@ import EmptyCourse from "@/components/EmptyCourse";
 import CourseCardContainer from "@/components/CourseCardContainer";
 import { IoMdClose } from "react-icons/io";
 import { BiSolidCopyAlt } from "react-icons/bi";
-import { CompletedCourseOverlay } from "../_components/courses/CompletedCourseOverlay";
-import { UncompletedCourseOverlay } from "../_components/courses/UncompletedCourseOverlay";
+import { CompletedCourseOverlay } from "../../_components/courses/CompletedCourseOverlay";
+import { UncompletedCourseOverlay } from "../../_components/courses/UncompletedCourseOverlay";
 import { TbBriefcaseFilled } from "react-icons/tb";
 
 // Dynamically import CourseTitle
@@ -83,8 +83,8 @@ const LearnerCourseDetails = () => {
             <CurriculumProgressTracker />
 
             {openCourseDropDown.modal && (
-              <div className="absolute z-20 -top-[65px] right-8  bg-[#F9FAFB] border rounded-xl  text-xs shadow w-full max-w-[600px]">
-                <div className="bg-white px-5 fbc py-3 rounded-t-xl border ">
+              <div className="absolute z-30 -top-[66px] right-8  bg-u-slate border rounded-xl  shadow-lg text-xs  w-full max-w-[600px]">
+                <div className="bg-white px-5 fbc py-3 rounded-t-xl border-b ">
                   <div className="fc gap-2">
                     <div className="border w-10 h-10 fcc rounded-full  ">
                       {openCourseDropDown.key === "uncompleted_course" ? (
@@ -113,7 +113,7 @@ const LearnerCourseDetails = () => {
                 </div>
 
                 <div className="overflow-y-scroll h-[60vh]">
-                  <div className="bg-[#F9FAFB] px-8 py-3 pb-10 space-y-6 rounded-b-xl mt-6">
+                  <div className="bg-u-slate px-8 py-3 pb-10 space-y-6 rounded-b-xl mt-6">
                     {openCourseDropDown.key === "uncompleted_course" && (
                       <UncompletedCourseOverlay />
                     )}

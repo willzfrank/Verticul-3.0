@@ -7,7 +7,7 @@ const Home: React.FC = () => {
       {/* Learner button */}
       <Link
         className="w-[188px] h-[33px] px-1 py-2 bg-white rounded shadow border border-neutral-200 justify-center items-center gap-px inline-flex cursor-pointer"
-        href="/course"
+        href="/all-courses"
       >
         <div className="text-neutral-700 text-sm font-medium font-['Inter']">
           Sign In as Learner

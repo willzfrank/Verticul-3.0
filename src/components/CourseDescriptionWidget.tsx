@@ -21,7 +21,7 @@ type Props = {
 };
 
 const CourseDescriptionWidget = ({ handleStartLearning }: Props) => {
-  const [isSubscribed, setIsSubscribed] = React.useState(true);
+  const [isSubscribed, setIsSubscribed] = React.useState(false);
   return (
     <div className="w-[95%]  ml-10">
       <div className="flex items-center justify-between">

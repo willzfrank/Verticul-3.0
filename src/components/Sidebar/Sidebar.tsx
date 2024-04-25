@@ -32,13 +32,11 @@ const Sidebar = () => {
     setActive(active === item ? "" : item);
   };
   return (
-    <div className=" hidden lg:flex flex-col justify-between fixed h-[calc(100vh-100px)] border-r w-[300px] bg-white overflow-y-scroll ">
-      {/* Course Details */}
-
+    <div className=" hidden lg:flex flex-col justify-between h-full w-full ">
       {/* navlinks */}
       <div className="">
         <div
-          className={`w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer ml-4 ${
+          className={`px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer ml-4 ${
             active === "coursedetails" || pathname === "/coursedetails"
               ? "bg-gray-100 text-[#101828]"
               : "text-gray-500"
@@ -51,6 +49,7 @@ const Sidebar = () => {
           <div className="w-5 h-5 justify-center items-center flex relative">
             <Image src={book} layout="fill" alt="book svg" />
           </div>
+
           <div className=" w-full h-5 justify-between items-center flex">
             <span className=" text-sm font-medium font-['Inter'] leading-tight">
               Course Details
@@ -147,6 +146,7 @@ const Sidebar = () => {
                 </div>
               </div>
             </Link>
+
             <Link
               href="/quiz"
               className={`w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer ${
@@ -239,7 +239,7 @@ const Sidebar = () => {
       </div>
 
       {/* section 2 */}
-      <div className="border border-red-500">
+      <div className="">
         <div className="w-full flex items-center justify-center  flex-col gap-2">
           <div className="w-[138px] px-2 py-0.5 flex items-center justify-center bg-gradient-to-b from-white to-indigo-50 rounded shadow border border-gray-200 gap-2 ">
             <div className="w-3.5 h-3.5 relative">
