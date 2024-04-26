@@ -18,8 +18,82 @@ import Image from "next/image";
 import { Flex, Progress } from "antd";
 import Link from "next/link";
 import PFP from "@/app/_components/PFP";
+import {
+  ResponsiveContainer,
+  StackedCarousel,
+} from "react-stacked-center-carousel";
+export const data = [
+  {
+    cover: "https://images6.alphacoders.com/679/thumb-1920-679459.jpg",
+    title: "Interstaller",
+  },
+  {
+    cover: "https://images2.alphacoders.com/851/thumb-1920-85182.jpg",
+    title: "Inception",
+  },
+  {
+    cover: "https://images6.alphacoders.com/875/thumb-1920-875570.jpg",
+    title: "Blade Runner 2049",
+  },
+  {
+    cover: "https://images6.alphacoders.com/114/thumb-1920-1141749.jpg",
+    title: "Icon man 3",
+  },
+  {
+    cover: "https://images3.alphacoders.com/948/thumb-1920-948864.jpg",
+    title: "Venom",
+  },
+  {
+    cover: "https://images2.alphacoders.com/631/thumb-1920-631095.jpg",
+    title: "Steins Gate",
+  },
+  {
+    cover: "https://images4.alphacoders.com/665/thumb-1920-665242.png",
+    title: "One Punch Man",
+  },
+  {
+    cover: "https://images2.alphacoders.com/738/thumb-1920-738176.png",
+    title: "A Silent Voice",
+  },
+  {
+    cover: "https://images8.alphacoders.com/100/thumb-1920-1005531.jpg",
+    title: "Demon Slayer",
+  },
+  {
+    cover: "https://images2.alphacoders.com/582/thumb-1920-582804.png",
+    title: "Attack On Titan",
+  },
+];
+
+export const Card = React.memo(function (props) {
+  const { data, dataIndex } = props;
+  const { cover } = data[dataIndex];
+  return (
+    <div
+      style={{
+        width: "100%",
+        height: 300,
+        userSelect: "none",
+      }}
+      className="my-slide-component"
+    >
+      <img
+        className="w-full h-full object-cover"
+        width={0}
+        height={0}
+        alt="carousel-slide"
+        sizes="100vw"
+        draggable={false}
+        src={cover}
+      />
+    </div>
+  );
+});
+
+Card.displayName = "Card";
 
 const Sidebar = () => {
+  const ref = React.useRef();
   const [isCourseDetailsOpen, setIsCourseDetailsOpen] = useState(false);
   const [active, setActive] = useState("");
   const pathname = usePathname();
@@ -91,8 +165,9 @@ const Sidebar = () => {
                   <div className="w-[6.31px] h-[6.31px] left-[3.34px] top-[3.34px] absolute bg-gradient-to-t from-slate-300 to-teal-50 rounded-full shadow" />
                 </div>
               </Link>
+
               <Link
-                href="/coursedetails"
+                href="#"
                 className="w-[98px] justify-between items-center inline-flex cursor-pointer"
               >
                 <div className="text-gray-500 text-base font-medium font-['Inter'] leading-normal">
@@ -122,7 +197,7 @@ const Sidebar = () => {
         <div className="px-4 pb-2 border-b border-gray-200 flex-col justify-start items-start gap-px inline-flex">
           <div className="flex-col justify-start items-start gap-1 flex">
             <Link
-              href="/assessment"
+              href="/all-courses/course-details/assessment"
               className={`w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer ${
                 active === "assessment" || pathname === "/assessment"
                   ? "bg-gray-100 text-medium text-[#101828]"
@@ -148,7 +223,7 @@ const Sidebar = () => {
             </Link>
 
             <Link
-              href="/quiz"
+              href="/all-courses/course-details/quiz"
               className={`w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer ${
                 active === "quiz" || pathname === "/quiz"
                   ? "bg-gray-100 text-[#101828]"
@@ -173,7 +248,7 @@ const Sidebar = () => {
               </div>
             </Link>
             <Link
-              href="/scores"
+              href="/all-courses/course-details/scores"
               className={`w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer ${
                 active === "scores" || pathname === "/scores"
                   ? "bg-gray-100 text-[#101828]"
@@ -250,7 +325,31 @@ const Sidebar = () => {
             </h6>
           </div>
 
-          <small>SWIPER HERE</small>
+          {/* caroseul */}
+
+          <div className="my-5" style={{ width: "100%", position: "relative" }}>
+            <ResponsiveContainer
+              carouselRef={ref}
+              render={(parentWidth, carouselRef) => {
+                let currentVisibleSlide = 5;
+                if (parentWidth <= 1440) currentVisibleSlide = 3;
+                if (parentWidth <= 1080) currentVisibleSlide = 3;
+                return (
+                  <StackedCarousel
+                    ref={carouselRef}
+                    slideComponent={Card}
+                    slideWidth={parentWidth < 800 ? parentWidth - 40 : 750}
+                    carouselWidth={parentWidth}
+                    data={data}
+                    className="!h-[200px]"
+                    currentVisibleSlide={currentVisibleSlide}
+                    maxVisibleSlide={5}
+                    useGrabCursor
+                  />
+                );
+              }}
+            />
+          </div>
         </div>
 
         {/* EXPLORE COURSES */}

@@ -4,7 +4,7 @@ import { MdMoreVert } from "react-icons/md";
 
 export default function CertificateCard() {
   return (
-    <div className="border bg-u-slate shadow-md rounded-xl">
+    <div className="border bg-u-slate-100 shadow-md rounded-xl">
       <div className="px-10 mt-10">
         <Image
           src="/assets/images/certificate-placeholder.png"

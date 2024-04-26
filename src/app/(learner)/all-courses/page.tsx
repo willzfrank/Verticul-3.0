@@ -1,6 +1,6 @@
 "use client";
 
-import CourseCardContainer from "@/components/CourseCardContainer";
+import CourseCardContainer from "@/components/CourseCard";
 import CourseTitle from "@/components/CourseTitle";
 import SearchInput from "@/components/inputs/SearchInput";
 import NavbarBanner from "@/components/navbar/NavbarBanner";

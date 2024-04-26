@@ -15,6 +15,7 @@ import ReactPlayer from "react-player/lazy";
 import Link from "next/link";
 import CourseDetailsTab from "./CourseDetailsTab";
 import { Avatar, Flex, Progress, Tooltip } from "antd";
+import { MdTimer } from "react-icons/md";
 
 type Props = {
   handleStartLearning: () => void; // Define the type of handleStartLearning
@@ -121,7 +122,7 @@ const CourseDescriptionWidget = ({ handleStartLearning }: Props) => {
             <div className="w-full my-1 justify-start items-center gap-2 inline-flex">
               <div className="justify-start items-center gap-1 flex">
                 <div className="w-4 h-4 justify-center items-center relative flex">
-                  <Image src={timer} alt="timer" layout="fill" />
+                  <MdTimer className="text-u-slate-600" />
                 </div>
                 <div>
                   <span className="text-gray-500 text-sm font-normal font-['Inter'] leading-tight">

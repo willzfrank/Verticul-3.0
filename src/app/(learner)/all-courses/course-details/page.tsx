@@ -11,7 +11,7 @@ const CourseDetails = () => {
   };
   return (
     <>
-      <div className="w-[80%]">
+      <div className="">
         <CourseDescriptionWidget handleStartLearning={handleStartLearning} />
       </div>
 

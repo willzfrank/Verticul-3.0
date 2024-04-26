@@ -7,7 +7,7 @@ import ProgressTrackerCard from "@/components/ProgressTracker/ProgressTrackerCar
 import NavbarBanner from "@/components/navbar/NavbarBanner";
 import completedImage from "../../../public/assets/completedCourseCard.svg";
 import EmptyCourse from "@/components/EmptyCourse";
-import CourseCardContainer from "@/components/CourseCardContainer";
+import CourseCardContainer from "@/components/CourseCard";
 import { IoMdClose } from "react-icons/io";
 import { BiSolidCopyAlt } from "react-icons/bi";
 import { CompletedCourseOverlay } from "../../_components/courses/CompletedCourseOverlay";
@@ -83,7 +83,7 @@ const LearnerCourseDetails = () => {
             <CurriculumProgressTracker />
 
             {openCourseDropDown.modal && (
-              <div className="absolute z-30 -top-[66px] right-8  bg-u-slate border rounded-xl  shadow-lg text-xs  w-full max-w-[600px]">
+              <div className="absolute z-30 -top-[66px] right-8  bg-u-slate-100 border rounded-xl  shadow-lg text-xs  w-full max-w-[600px]">
                 <div className="bg-white px-5 fbc py-3 rounded-t-xl border-b ">
                   <div className="fc gap-2">
                     <div className="border w-10 h-10 fcc rounded-full  ">
@@ -113,7 +113,7 @@ const LearnerCourseDetails = () => {
                 </div>
 
                 <div className="overflow-y-scroll h-[60vh]">
-                  <div className="bg-u-slate px-8 py-3 pb-10 space-y-6 rounded-b-xl mt-6">
+                  <div className="bg-u-slate-100 px-8 py-3 pb-10 space-y-6 rounded-b-xl mt-6">
                     {openCourseDropDown.key === "uncompleted_course" && (
                       <UncompletedCourseOverlay />
                     )}
