@@ -1,10 +1,10 @@
-import { Modal } from 'antd'
-import React from 'react'
+import { Modal } from "antd";
+import React from "react";
 
 type Props = {
-  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>
-  isModalOpen: boolean
-}
+  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isModalOpen: boolean;
+};
 const IntroductionModal = ({ setIsModalOpen, isModalOpen }: Props) => {
   return (
     <Modal style={{ top: 20 }} open={isModalOpen} width={1000}>
@@ -36,7 +36,7 @@ const IntroductionModal = ({ setIsModalOpen, isModalOpen }: Props) => {
                   className="text-gray-900 text-xs font-medium font-['Inter'] leading-[18px]"
                 >
                   Roles
-                </label>{' '}
+                </label>{" "}
                 <input
                   className="w-[219px] h-[30px] px-3 py-1.5 bg-white rounded-md shadow border border-gray-300 justify-start items-center gap-px inline-flex text-gray-500 text-xs font-normal font-['Inter'] leading-[18px] outline-none"
                   placeholder="lorem"
@@ -48,7 +48,7 @@ const IntroductionModal = ({ setIsModalOpen, isModalOpen }: Props) => {
                   className="text-gray-900 text-xs font-medium font-['Inter'] leading-[18px]"
                 >
                   Organization
-                </label>{' '}
+                </label>{" "}
                 <input
                   className="w-[219px] h-[30px] px-3 py-1.5 bg-white rounded-md shadow border border-gray-300 justify-start items-center gap-px inline-flex text-gray-500 text-xs font-normal font-['Inter'] leading-[18px] outline-none"
                   placeholder="Intoduction to marketing"
@@ -62,7 +62,7 @@ const IntroductionModal = ({ setIsModalOpen, isModalOpen }: Props) => {
                 className="text-gray-900 text-xs font-medium font-['Inter'] leading-[18px]"
               >
                 Hobbies
-              </label>{' '}
+              </label>{" "}
               <input
                 className="w-full h-[30px] px-3 py-1.5 bg-white rounded-md shadow border border-gray-300 justify-start items-center gap-px inline-flex text-gray-500 text-xs font-normal font-['Inter'] leading-[18px] outline-none"
                 placeholder="lorem.."
@@ -74,8 +74,8 @@ const IntroductionModal = ({ setIsModalOpen, isModalOpen }: Props) => {
                 htmlFor=""
                 className="text-gray-900 text-xs font-medium font-['Inter'] leading-[18px]"
               >
-                What are your expectations?{' '}
-              </label>{' '}
+                What are your expectations?{" "}
+              </label>{" "}
               <textarea
                 name=""
                 id=""
@@ -293,10 +293,10 @@ const IntroductionModal = ({ setIsModalOpen, isModalOpen }: Props) => {
               <div className="w-[5px] h-[5px] bg-emerald-500 rounded-full shadow" />
             </div>
           </div>
-        </div>{' '}
+        </div>{" "}
       </div>
     </Modal>
-  )
-}
+  );
+};
 
-export default IntroductionModal
+export default IntroductionModal;
