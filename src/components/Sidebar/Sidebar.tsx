@@ -8,7 +8,7 @@ import verify from "../../../public/assets/verify.svg";
 import award from "../../../public/assets/award.svg";
 import cube from "../../../public/assets/relatedCourseCube.svg";
 import logout from "../../../public/assets/logout.png";
-import exploreCard from "../../../public/assets/exploreCard.png";
+// import exploreCard from "../../../public/assets/exploreCard.png";
 
 import profile from "../../../public/assets/portrait-person-wearing-graphic-eye-makeup.jpg";
 import question from "../../../public/assets/message-question.svg";
@@ -355,7 +355,7 @@ const Sidebar = () => {
         {/* EXPLORE COURSES */}
 
         <div className=" relative mx-5 h-[58.42px]">
-          <Image src={exploreCard} layout="fill" alt="explore card" />
+          {/* <Image src={exploreCard} layout="fill" alt="explore card" /> */}
         </div>
 
         {/* LOG OUT */}
