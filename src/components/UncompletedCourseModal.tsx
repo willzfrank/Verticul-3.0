@@ -1,14 +1,14 @@
-import { Modal } from "antd";
-import React from "react";
-import Uncompleted from "../../public/assets/uncompletedCourseBox.svg";
-import certificate_document from "../../public/assets/certificate_document.svg";
-import certificate_image from "../../public/assets/certificate_image.png";
-import certificate_award from "../../public/assets/certificate_award_blue.svg";
-import arrow_right from "../../public/assets/arrow-right.svg";
+import { Modal } from 'antd'
+import React from 'react'
+import Uncompleted from '../../public/assets/uncompletedCourseBox.svg'
+import certificate_document from '../../public/assets/certificate_document.svg'
+import certificate_image from '../../public/assets/certificate_image.png'
+import certificate_award from '../../public/assets/certificate_award_blue.svg'
+import arrow_right from '../../public/assets/arrow-right.svg'
 
-import Image from "next/image";
-import Link from "next/link";
-import { ProgressBar } from "./CustomProgress";
+import Image from 'next/image'
+import Link from 'next/link'
+import { ProgressBar } from './CustomProgress'
 
 const UncompletedCourseModal = () => {
   return (
@@ -44,7 +44,7 @@ const UncompletedCourseModal = () => {
               <div className="w-full h-[18px] justify-between items-center inline-flex">
                 <ProgressBar percentage={50} />
                 <Link
-                  href="/coursedetails"
+                  href="/all-courses/course-details"
                   className="justify-start items-center gap-1 flex"
                 >
                   <div className="text-indigo-500 text-xs font-medium font-['Inter'] leading-[18px]">
@@ -60,7 +60,7 @@ const UncompletedCourseModal = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default UncompletedCourseModal;
+export default UncompletedCourseModal

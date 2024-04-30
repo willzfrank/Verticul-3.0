@@ -8,7 +8,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
         <Sidebar />
       </div>
 
-      <div className="ml-[310px] w-full ">{children}</div>
+      <div className="ml-[300px] w-full ">{children}</div>
 
       {/* Floating buton */}
       <button className="fixed bottom-5 right-5 w-[187px] h-[30px] pl-3.5 pr-0.5 py-0.5 bg-gradient-to-b from-zinc-500 to-zinc-800 rounded-[32px] shadow border border-neutral-200 justify-start items-center gap-6 inline-flex">

@@ -173,7 +173,7 @@ const CourseDetailsTab = ({ handleStartLearning }: Props) => {
                   </div>
                 </div>
                 <div className="w-full h-[216px] flex-col justify-start items-end gap-4 inline-flex animate__animated animate__fadeIn">
-                  <div className="self-stretch px-2 py-1 bg-white rounded shadow border border-indigo-400 justify-start items-start gap-2 inline-flex">
+                  <div className="self-stretch px-2 py-1  rounded shadow border border-indigo-400  items-start flex">
                     <div className="w-[22px] h-[22px] relative">
                       <div className="w-[22px] h-[22px] left-0 top-0 absolute">
                         <div className="w-[22px] h-[22px] left-0 top-0 absolute bg-indigo-200 rounded-full border border-white" />
@@ -184,11 +184,11 @@ const CourseDetailsTab = ({ handleStartLearning }: Props) => {
                         T
                       </span>
                     </div>
-                    <div className="w-[295px] flex-col justify-start items-start gap-1 inline-flex">
+                    <div className="w-full flex-col gap-1 ml-[5px] inline-flex">
                       <p className="text-slate-700 truncate text-sm font-medium font-['Inter'] leading-tight">
                         Intoduction to Marketing Fundamentals...
                       </p>
-                      <div className="w-[295px] justify-between items-center inline-flex">
+                      <div className="w-full justify-between items-center inline-flex">
                         <div className="justify-start items-start gap-1 flex">
                           <div className="justify-start items-center gap-1 flex">
                             <div className="w-3 h-3 justify-center items-center flex">

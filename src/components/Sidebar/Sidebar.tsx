@@ -116,7 +116,7 @@ const Sidebar = () => {
       {/* navlinks */}
       <div className="">
         <div
-          className={`px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer ml-4 ${
+          className={`px-2 w-[228px]  py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer ml-4 ${
             active === 'coursedetails' || pathname === '/coursedetails'
               ? 'bg-gray-100 text-[#101828]'
               : 'text-gray-500'

@@ -1,33 +1,33 @@
-import React from "react";
-import logo from "../../../public/assets/verticul_logo.svg";
-import Image from "next/image";
-import Link from "next/link";
-import { HiOutlineShoppingCart } from "react-icons/hi";
-import { RxCaretDown } from "react-icons/rx";
+import React from 'react'
+import logo from '../../../public/assets/verticul_logo.svg'
+import Image from 'next/image'
+import Link from 'next/link'
+import { HiOutlineShoppingCart } from 'react-icons/hi'
+import { RxCaretDown } from 'react-icons/rx'
 
 const navlnks = [
   {
-    name: "Forum",
-    link: "forum",
+    name: 'Forum',
+    link: 'forum',
   },
   {
-    name: "Courses",
-    link: "all-courses",
+    name: 'Courses',
+    link: 'all-courses',
   },
   {
-    name: "New",
-    link: "#",
-    image: "/assets/spark.svg",
+    name: 'New',
+    link: '#',
+    image: '/assets/spark.svg',
   },
   {
-    name: "Blog",
-    link: "blog",
+    name: 'Blog',
+    link: 'blog',
   },
-];
+]
 
 const Navbar = () => {
   return (
-    <nav className="sticky  z-30 top-0 h-16 px-12 py-4 bg-white flex items-center justify-between border ">
+    <nav className="sticky  z-50 top-0 h-16 px-12 py-4 bg-white flex items-center justify-between border ">
       <Link href="/" className="flex items-center gap-2">
         <div className="w-[30px] h-[30px] p-0.5 bg-white rounded shadow border border-indigo-50 justify-center items-center inline-flex">
           <div className="grow shrink basis-0 self-stretch p-1 bg-violet-50 rounded-sm justify-center items-center inline-flex">
@@ -110,7 +110,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
