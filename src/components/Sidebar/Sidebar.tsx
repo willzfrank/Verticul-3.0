@@ -1,79 +1,85 @@
-"use client";
+'use client'
 
-import React, { useState } from "react";
-import book from "../../../public/assets/book.svg";
-import { usePathname } from "next/navigation";
-import folder from "../../../public/assets/folder.png";
-import verify from "../../../public/assets/verify.svg";
-import award from "../../../public/assets/award.svg";
-import cube from "../../../public/assets/relatedCourseCube.svg";
-import logout from "../../../public/assets/logout.png";
+import React, { useState } from 'react'
+import book from '../../../public/assets/book.svg'
+import { usePathname } from 'next/navigation'
+import folder from '../../../public/assets/folder.png'
+import verify from '../../../public/assets/verify.svg'
+import award from '../../../public/assets/award.svg'
+import cube from '../../../public/assets/relatedCourseCube.svg'
+import logout from '../../../public/assets/logout.png'
 // import exploreCard from "../../../public/assets/exploreCard.png";
 
-import profile from "../../../public/assets/portrait-person-wearing-graphic-eye-makeup.jpg";
-import question from "../../../public/assets/message-question.svg";
+import profile from '../../../public/assets/portrait-person-wearing-graphic-eye-makeup.jpg'
+import question from '../../../public/assets/message-question.svg'
 
-import Image from "next/image";
+import Image from 'next/image'
 
-import { Flex, Progress } from "antd";
-import Link from "next/link";
-import PFP from "@/app/_components/PFP";
+import { Flex, Progress } from 'antd'
+import Link from 'next/link'
+import PFP from '@/app/_components/PFP'
 import {
   ResponsiveContainer,
   StackedCarousel,
-} from "react-stacked-center-carousel";
+} from 'react-stacked-center-carousel'
+
+type CardProps = {
+  data: { cover: string; title: string }[]
+  dataIndex: number
+}
+
 export const data = [
   {
-    cover: "https://images6.alphacoders.com/679/thumb-1920-679459.jpg",
-    title: "Interstaller",
+    cover: 'https://images6.alphacoders.com/679/thumb-1920-679459.jpg',
+    title: 'Interstaller',
   },
   {
-    cover: "https://images2.alphacoders.com/851/thumb-1920-85182.jpg",
-    title: "Inception",
+    cover: 'https://images2.alphacoders.com/851/thumb-1920-85182.jpg',
+    title: 'Inception',
   },
   {
-    cover: "https://images6.alphacoders.com/875/thumb-1920-875570.jpg",
-    title: "Blade Runner 2049",
+    cover: 'https://images6.alphacoders.com/875/thumb-1920-875570.jpg',
+    title: 'Blade Runner 2049',
   },
   {
-    cover: "https://images6.alphacoders.com/114/thumb-1920-1141749.jpg",
-    title: "Icon man 3",
+    cover: 'https://images6.alphacoders.com/114/thumb-1920-1141749.jpg',
+    title: 'Icon man 3',
   },
   {
-    cover: "https://images3.alphacoders.com/948/thumb-1920-948864.jpg",
-    title: "Venom",
+    cover: 'https://images3.alphacoders.com/948/thumb-1920-948864.jpg',
+    title: 'Venom',
   },
   {
-    cover: "https://images2.alphacoders.com/631/thumb-1920-631095.jpg",
-    title: "Steins Gate",
+    cover: 'https://images2.alphacoders.com/631/thumb-1920-631095.jpg',
+    title: 'Steins Gate',
   },
   {
-    cover: "https://images4.alphacoders.com/665/thumb-1920-665242.png",
-    title: "One Punch Man",
+    cover: 'https://images4.alphacoders.com/665/thumb-1920-665242.png',
+    title: 'One Punch Man',
   },
   {
-    cover: "https://images2.alphacoders.com/738/thumb-1920-738176.png",
-    title: "A Silent Voice",
+    cover: 'https://images2.alphacoders.com/738/thumb-1920-738176.png',
+    title: 'A Silent Voice',
   },
   {
-    cover: "https://images8.alphacoders.com/100/thumb-1920-1005531.jpg",
-    title: "Demon Slayer",
+    cover: 'https://images8.alphacoders.com/100/thumb-1920-1005531.jpg',
+    title: 'Demon Slayer',
   },
   {
-    cover: "https://images2.alphacoders.com/582/thumb-1920-582804.png",
-    title: "Attack On Titan",
+    cover: 'https://images2.alphacoders.com/582/thumb-1920-582804.png',
+    title: 'Attack On Titan',
   },
-];
+]
 
-export const Card = React.memo(function (props) {
-  const { data, dataIndex } = props;
-  const { cover } = data[dataIndex];
+export const Card = React.memo(function (props: CardProps) {
+  const { data, dataIndex } = props
+  const { cover } = data[dataIndex]
   return (
     <div
       style={{
-        width: "100%",
+        width: '100%',
         height: 300,
-        userSelect: "none",
+        userSelect: 'none',
       }}
       className="my-slide-component"
     >
@@ -87,37 +93,37 @@ export const Card = React.memo(function (props) {
         src={cover}
       />
     </div>
-  );
-});
+  )
+})
 
-Card.displayName = "Card";
+Card.displayName = 'Card'
 
 const Sidebar = () => {
-  const ref = React.useRef();
-  const [isCourseDetailsOpen, setIsCourseDetailsOpen] = useState(false);
-  const [active, setActive] = useState("");
-  const pathname = usePathname();
+  const ref = React.useRef()
+  const [isCourseDetailsOpen, setIsCourseDetailsOpen] = useState(false)
+  const [active, setActive] = useState('')
+  const pathname = usePathname()
 
   const toggleDropdown = () => {
-    setIsCourseDetailsOpen((prev) => !prev);
-  };
+    setIsCourseDetailsOpen((prev) => !prev)
+  }
 
   const toggleActive = (item: React.SetStateAction<string>) => {
-    setActive(active === item ? "" : item);
-  };
+    setActive(active === item ? '' : item)
+  }
   return (
     <div className=" hidden lg:flex flex-col justify-between h-full w-full ">
       {/* navlinks */}
       <div className="">
         <div
           className={`px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer ml-4 ${
-            active === "coursedetails" || pathname === "/coursedetails"
-              ? "bg-gray-100 text-[#101828]"
-              : "text-gray-500"
+            active === 'coursedetails' || pathname === '/coursedetails'
+              ? 'bg-gray-100 text-[#101828]'
+              : 'text-gray-500'
           }`}
           onClick={() => {
-            toggleDropdown();
-            toggleActive("courseDetails");
+            toggleDropdown()
+            toggleActive('courseDetails')
           }}
         >
           <div className="w-5 h-5 justify-center items-center flex relative">
@@ -199,11 +205,11 @@ const Sidebar = () => {
             <Link
               href="/all-courses/course-details/assessment"
               className={`w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer ${
-                active === "assessment" || pathname === "/assessment"
-                  ? "bg-gray-100 text-medium text-[#101828]"
-                  : "text-gray-500"
+                active === 'assessment' || pathname === '/assessment'
+                  ? 'bg-gray-100 text-medium text-[#101828]'
+                  : 'text-gray-500'
               }`}
-              onClick={() => toggleActive("assessment")}
+              onClick={() => toggleActive('assessment')}
             >
               <div className="w-5 h-5 justify-center items-center relative flex">
                 <Image src={folder} layout="fill" alt="folder svg" />
@@ -225,11 +231,11 @@ const Sidebar = () => {
             <Link
               href="/all-courses/course-details/quiz"
               className={`w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer ${
-                active === "quiz" || pathname === "/quiz"
-                  ? "bg-gray-100 text-[#101828]"
-                  : "text-gray-500"
+                active === 'quiz' || pathname === '/quiz'
+                  ? 'bg-gray-100 text-[#101828]'
+                  : 'text-gray-500'
               }`}
-              onClick={() => toggleActive("quiz")}
+              onClick={() => toggleActive('quiz')}
             >
               <div className="w-5 h-5 justify-center items-center flex relative">
                 <Image src={question} layout="fill" alt="question svg" />
@@ -250,11 +256,11 @@ const Sidebar = () => {
             <Link
               href="/all-courses/course-details/scores"
               className={`w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer ${
-                active === "scores" || pathname === "/scores"
-                  ? "bg-gray-100 text-[#101828]"
-                  : "text-gray-500"
+                active === 'scores' || pathname === '/scores'
+                  ? 'bg-gray-100 text-[#101828]'
+                  : 'text-gray-500'
               }`}
-              onClick={() => toggleActive("scores")}
+              onClick={() => toggleActive('scores')}
             >
               <div className="w-5 h-5 justify-center items-center flex relative">
                 <Image src={verify} layout="fill" alt="verify svg" />
@@ -268,11 +274,11 @@ const Sidebar = () => {
             <Link
               href="/certificate"
               className={`w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer ${
-                active === "certificate" || pathname === "/certificate"
-                  ? "bg-gray-100 text-medium text-[#101828]"
-                  : "text-gray-500"
+                active === 'certificate' || pathname === '/certificate'
+                  ? 'bg-gray-100 text-medium text-[#101828]'
+                  : 'text-gray-500'
               }`}
-              onClick={() => toggleActive("certificate")}
+              onClick={() => toggleActive('certificate')}
             >
               <div className="w-5 h-5 justify-center items-center flex relative">
                 <Image src={award} layout="fill" alt="award svg" />
@@ -327,13 +333,13 @@ const Sidebar = () => {
 
           {/* caroseul */}
 
-          <div className="my-5" style={{ width: "100%", position: "relative" }}>
+          <div className="my-5" style={{ width: '100%', position: 'relative' }}>
             <ResponsiveContainer
               carouselRef={ref}
               render={(parentWidth, carouselRef) => {
-                let currentVisibleSlide = 5;
-                if (parentWidth <= 1440) currentVisibleSlide = 3;
-                if (parentWidth <= 1080) currentVisibleSlide = 3;
+                let currentVisibleSlide = 5
+                if (parentWidth <= 1440) currentVisibleSlide = 3
+                if (parentWidth <= 1080) currentVisibleSlide = 3
                 return (
                   <StackedCarousel
                     ref={carouselRef}
@@ -346,7 +352,7 @@ const Sidebar = () => {
                     maxVisibleSlide={5}
                     useGrabCursor
                   />
-                );
+                )
               }}
             />
           </div>
@@ -376,7 +382,7 @@ const Sidebar = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar
