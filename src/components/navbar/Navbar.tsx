@@ -27,7 +27,7 @@ const navlnks = [
 
 const Navbar = () => {
   return (
-    <nav className="sticky  z-50 top-0 h-16 px-12 py-4 bg-white flex items-center justify-between border ">
+    <nav className="sticky  z-50 top-0 h-16 px-12 py-4 bg-white flex items-center justify-between ">
       <Link href="/" className="flex items-center gap-2">
         <div className="w-[30px] h-[30px] p-0.5 bg-white rounded shadow border border-indigo-50 justify-center items-center inline-flex">
           <div className="grow shrink basis-0 self-stretch p-1 bg-violet-50 rounded-sm justify-center items-center inline-flex">

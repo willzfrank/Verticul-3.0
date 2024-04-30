@@ -8,10 +8,11 @@ import { IoDocumentOutline } from 'react-icons/io5'
 import 'animate.css'
 
 type Props = {
-  handleStartLearning: () => void // Define the type of handleStartLearning
+  handleStartLearning: () => void
+  isSubscribed: boolean
 }
 
-const CourseDetailsTab = ({ handleStartLearning }: Props) => {
+const CourseDetailsTab = ({ handleStartLearning, isSubscribed }: Props) => {
   const [activeTab, setActiveTab] = useState('modules')
   const [isAccordionOpen, setIsAccordionOpen] = useState(false)
 
@@ -288,18 +289,19 @@ const CourseDetailsTab = ({ handleStartLearning }: Props) => {
                 </div>
               </div>
             </div>
-
             {/* START BUTTON */}
-            <button
-              className="w-full my-5 h-7 px-2 py-1 bg-gradient-to-b from-indigo-400 to-indigo-500 rounded shadow border border-violet-400 flex-col justify-center items-center gap-px inline-flex"
-              onClick={handleStartLearning}
-            >
-              <div className="justify-start items-center gap-1 inline-flex">
-                <span className="text-violet-50 text-sm font-medium font-['Inter'] leading-tight">
-                  Start Learning
-                </span>
-              </div>
-            </button>
+            {isSubscribed && (
+              <button
+                className="w-full my-5 h-7 px-2 py-1 bg-gradient-to-b from-indigo-400 to-indigo-500 rounded shadow border border-violet-400 flex-col justify-center items-center gap-px inline-flex"
+                onClick={handleStartLearning}
+              >
+                <div className="justify-start items-center gap-1 inline-flex">
+                  <span className="text-violet-50 text-sm font-medium font-['Inter'] leading-tight">
+                    Start Learning
+                  </span>
+                </div>
+              </button>
+            )}
           </div>
         )}
         {activeTab === 'discussion' && (

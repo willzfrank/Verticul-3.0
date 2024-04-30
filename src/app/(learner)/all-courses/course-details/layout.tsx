@@ -4,7 +4,7 @@ import { PiMagicWandLight } from "react-icons/pi";
 export default function layout({ children }: { children: React.ReactNode }) {
   return (
     <main className="flex relative w-full my-5">
-      <div className="hidden lg:block fixed h-[calc(100vh-100px)] border-r w-[300px] bg-white overflow-y-scroll">
+      <div className="hidden lg:block fixed h-[calc(100vh-100px)] border-r w-[300px] bg-white overflow-y-scroll no-scrollbar">
         <Sidebar />
       </div>
 
@@ -20,5 +20,5 @@ export default function layout({ children }: { children: React.ReactNode }) {
         </div>
       </button>
     </main>
-  );
+  )
 }
