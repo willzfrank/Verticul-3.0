@@ -272,7 +272,7 @@ const Sidebar = () => {
               </div>
             </Link>
             <Link
-              href="/certificate"
+              href="/all-courses/course-details/certificate"
               className={`w-[228px] px-2 py-1.5 my-1 rounded shadow justify-start items-center gap-2 inline-flex cursor-pointer ${
                 active === 'certificate' || pathname === '/certificate'
                   ? 'bg-gray-100 text-medium text-[#101828]'
