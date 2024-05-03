@@ -21,9 +21,9 @@ const CertificateDetails = dynamic(
 type Props = {}
 
 const Certificate = (props: Props) => {
-  const [completedCourse, setCompletedCourse] = useState(false)
+  const [completedCourse, setCompletedCourse] = useState(true)
   return (
-    <div className="w-[80%]">
+    <div className="w-full">
       <div className="w-full flex items-center justify-center">
         {completedCourse ? <CertificateProgressBar /> : <CertificateDetails />}
       </div>

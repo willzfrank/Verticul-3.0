@@ -1,15 +1,15 @@
-import { Modal } from "antd";
-import React from "react";
-import Uncompleted from "../../public/assets/uncompletedCourseBox.svg";
-import certificate_document from "/assets/certificate_document.svg";
-import certificate_image from ".assets/certificate_image.png";
-import certificate_award from "assets/certificate_award_blue.svg";
-import arrow_right from "../../public/assets/arrow-right.svg";
-import { FaSquareArrowUpRight } from "react-icons/fa6";
+import { Modal } from 'antd'
+import React from 'react'
+import Uncompleted from '../../public/assets/uncompletedCourseBox.svg'
+import certificate_document from '/assets/certificate_document.svg'
+import certificate_image from '.assets/certificate_image.png'
+import certificate_award from 'assets/certificate_award_blue.svg'
+import arrow_right from '../../public/assets/arrow-right.svg'
+import { FaSquareArrowUpRight } from 'react-icons/fa6'
 
-import Image from "next/image";
-import Link from "next/link";
-import { ProgressBar } from "@/components/CustomProgress";
+import Image from 'next/image'
+import Link from 'next/link'
+import { ProgressBar } from '@/components/CustomProgress'
 
 export const UncompletedCourseOverlay = () => {
   return (
@@ -40,7 +40,7 @@ export const UncompletedCourseOverlay = () => {
           <ProgressBar percentage={80} />
 
           <Link
-            href="/course-details"
+            href="/all-courses/course-details"
             className="fc gap-1 font-medium hover:text-indigo-800"
           >
             <div className="text-indigo-500 text-xs ">Finish up</div>
@@ -49,5 +49,5 @@ export const UncompletedCourseOverlay = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

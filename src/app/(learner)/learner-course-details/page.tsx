@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import CurriculumProgressTracker from "@/components/ProgressTracker/CurriculumProgressTracker";
 import ProgressTrackerCard from "@/components/ProgressTracker/ProgressTrackerCard";
 import NavbarBanner from "@/components/navbar/NavbarBanner";
+import completedImage from "../../../../public/assets/completedCourseCard.svg";
 import EmptyCourse from "@/components/EmptyCourse";
 import CourseCardContainer from "@/components/CourseCard";
 import { IoMdClose } from "react-icons/io";

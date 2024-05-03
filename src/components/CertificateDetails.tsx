@@ -29,8 +29,8 @@ const CertificateDetails = (props: Props) => {
   }
 
   return (
-    <div className="w-[95%]  ml-10">
-      <div className="flex items-center justify-between">
+    <div className="w-full">
+      <div className="flex items-center justify-between px-2">
         <span className="text-slate-700 text-sm font-normal font-['Inter'] leading-tight">
           🔖 Certificate
         </span>
@@ -81,10 +81,10 @@ const CertificateDetails = (props: Props) => {
           </button>
         </div>
       </div>
-      <h2 className="text-gray-900 text-xl font-medium font-['Inter'] mt-5 leading-[30px]">
+      <h2 className="text-gray-900 text-xl font-medium font-['Inter'] mt-2 leading-[30px] px-2">
         Certificate issued: Fundamentals of Digital Marketing 101
       </h2>
-      <div className="flex items-center gap-2 mt-3">
+      <div className="flex items-center gap-2 mt-3 px-2">
         <span className="text-gray-500 w-max text-sm font-normal font-['Inter'] leading-tight">
           Course Progress:
         </span>

@@ -62,7 +62,7 @@ const Quiz = (props: Props) => {
           />
 
           <div>
-            <h2 className="text-2xl font-semibold"> Quiz</h2>
+            <h2 className="text-2xl font-medium"> Quiz</h2>
             <p className="text-sm text-gray-600">
               Answer all questions in this section before proceeding{" "}
             </p>
