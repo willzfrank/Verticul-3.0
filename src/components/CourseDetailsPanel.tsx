@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -6,15 +8,18 @@ import ReactPlayer from 'react-player/lazy'
 import { Avatar, Tooltip } from 'antd'
 
 import user from '../../public/assets/user-octagon.png'
+import share from '../../public/assets/share.svg'
+
 import learningObjectiveBook from '../../public/assets/learningObjectiveBook.svg'
 
 type Props = {
   isSubscribed: boolean
+  shareCourse: boolean
 }
 
 const CourseDetailsPanel = (props: Props) => {
   return (
-    <div className="w-[65%]">
+    <div className="">
       <div className="h-full w-full my-5 relative rounded">
         <ReactPlayer
           url="https://v3.cdnpk.net/videvo_files/video/free/2012-09/large_preview/hd1823.mp4"
@@ -106,9 +111,22 @@ const CourseDetailsPanel = (props: Props) => {
               href="#"
               className="w-max h-5 px-2 py-px bg-white rounded shadow border border-gray-300 justify-start items-center gap-1 inline-flex"
             >
-              <span className="text-slate-700 text-xs font-medium font-['Inter'] leading-[18px]">
-                Read about the instructor
-              </span>
+              {!props.shareCourse ? (
+                <span className="text-slate-700 text-xs font-medium font-['Inter'] leading-[18px]">
+                  Read about the instructor
+                </span>
+              ) : (
+                <div className="justify-start items-center gap-1 flex">
+                  <span className="text-slate-700 text-sm font-medium font-['Inter'] leading-tight">
+                    Share Course
+                  </span>
+                  <div className="w-3.5 h-3.5 justify-center items-center flex">
+                    <div className="w-3.5 h-3.5 relative">
+                      <Image src={share} alt="share" layout="fill" />
+                    </div>
+                  </div>
+                </div>
+              )}
             </Link>
           </div>
           {/* LEARNING OBJECTIVES HERE */}

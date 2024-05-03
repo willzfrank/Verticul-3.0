@@ -193,9 +193,9 @@ const CourseDetailsHeader = (props: Props) => {
               <div className="justify-start items-center gap-2 flex">
                 <div className="w-[3px] h-[3px] bg-gray-500 rounded-full" />
                 <div className="justify-start items-center gap-1 flex">
-                  <div className="text-slate-700 text-sm font-normal font-['Inter'] leading-tight">
+                  <span className="text-slate-700 text-sm font-normal font-['Inter'] leading-tight">
                     Ratings:
-                  </div>
+                  </span>
                   <div className="justify-start items-start gap-[3px] flex">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

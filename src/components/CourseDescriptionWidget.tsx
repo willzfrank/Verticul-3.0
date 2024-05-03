@@ -24,7 +24,7 @@ const CourseDescriptionWidget = ({ handleStartLearning }: Props) => {
       {/* COURSE BODY */}
       <div className="w-full flex items-start gap-5 justify-between px-5">
         {/* Video Body */}
-        <CourseDetailsPanel isSubscribed={isSubscribed} />
+        <CourseDetailsPanel isSubscribed={isSubscribed} shareCourse={false} />
         {/* Modules */}
         <div className="w-[35%] mt-5">
           <CourseDetailsTab

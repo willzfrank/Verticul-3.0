@@ -11,6 +11,7 @@ import filter from '../../../../public/assets/filter-variant.svg'
 
 import React from 'react'
 import Image from 'next/image'
+import CourseSearchSection from '@/components/CourseSearchSection'
 
 const items: TabsProps['items'] = [
   {
@@ -39,22 +40,7 @@ export default function page() {
   return (
     <div className="">
       <NavbarBanner />
-
-      <div className="py-5 bg-[#FCFCFD]">
-        <div className="wrapper fbc">
-          <p className="text-2xl font-medium">All Courses</p>
-
-          <div className="w-[300px] ">
-            <SearchInput
-              placeholder="Search for courses... "
-              value=""
-              onChange={(e) => {
-                console.log(e.target.value)
-              }}
-            />
-          </div>
-        </div>
-      </div>
+      <CourseSearchSection headerText="All Courses" />
 
       <div className="wrapper">
         <div className="flex items-center justify-between">
