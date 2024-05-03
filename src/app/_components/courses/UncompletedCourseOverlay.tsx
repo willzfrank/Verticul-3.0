@@ -37,7 +37,7 @@ export const UncompletedCourseOverlay = () => {
         </div>
 
         <div className="fbc ">
-          <ProgressBar percentage={50} />
+          <ProgressBar percentage={80} />
 
           <Link
             href="/course-details"
