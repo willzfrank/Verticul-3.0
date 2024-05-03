@@ -288,9 +288,6 @@ const CoursePurchase = (props: Props) => {
           <div className=" w-full">
             <CourseDetailsPanel isSubscribed={false} shareCourse={true} />
             <MininumRequirements />
-            <div className="mt-5">
-              <RelatedCourse />
-            </div>
           </div>
           <div className="w-1/2 ">
             <div className=" mb-5 text-slate-700 text-base font-semibold font-['Inter'] leading-normal">
@@ -528,6 +525,9 @@ const CoursePurchase = (props: Props) => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="mt-5">
+          <RelatedCourse />
         </div>
       </div>
     </div>
