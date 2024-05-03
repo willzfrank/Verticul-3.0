@@ -3,12 +3,13 @@ import React from "react";
 
 export default function TextBoxQuestion() {
   return (
-    <div>
+    <div className="">
       <TextArea
         placeholder="Type here"
         maxLength={100}
         showCount
-        className="min-h-[150px]"
+        autoSize
+        className="!pb-20"
       />
     </div>
   );

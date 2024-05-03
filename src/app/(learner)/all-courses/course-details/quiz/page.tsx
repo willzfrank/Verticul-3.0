@@ -5,6 +5,8 @@ import SelectAOption from "@/app/_components/courses/interactive-quiz/SelectAOpt
 import SelectMultipleOptions from "@/app/_components/courses/interactive-quiz/SelectMultipleOptions";
 import SortAListQuestion from "@/app/_components/courses/interactive-quiz/SortAListQuestion";
 import TextBoxQuestion from "@/app/_components/courses/interactive-quiz/TextBoxQuestion";
+import Back from "@/components/buttons/Back";
+import Image from "next/image";
 import React from "react";
 
 type Props = {};
@@ -45,18 +47,46 @@ const Quiz = (props: Props) => {
   ];
 
   return (
-    <div className="w-full lg:w-[60%] lg:mx-auto">
-      <div className="space-y-6">
-        {items.map((i, idx) => {
-          return (
-            <AccordionQuestion
-              key={idx}
-              idx={idx}
-              header={i.label}
-              body={i.children}
-            />
-          );
-        })}
+    <div className="w-full max-w-[600px] lg:mx-auto">
+      <div className="flex items-start gap-4 mb-10">
+        <Back navigateBack />
+
+        <div className="flex items-start gap-4 border-b pb-2 w-full">
+          <Image
+            className="w-16 h-16 cursor-pointer"
+            src="/assets/images/quiz-icon.png"
+            alt="quiz"
+            sizes="100vw"
+            width="0"
+            height="0"
+          />
+
+          <div>
+            <h2 className="text-2xl font-semibold"> Quiz</h2>
+            <p className="text-sm text-gray-600">
+              Answer all questions in this section before proceeding{" "}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div className="border rounded mb-5 px-4 py-1">
+          <p>Introduction to Marketing fundamentals</p>
+        </div>
+
+        <div className="space-y-6">
+          {items.map((i, idx) => {
+            return (
+              <AccordionQuestion
+                key={idx}
+                idx={idx + 1}
+                header={i.label}
+                body={i.children}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );

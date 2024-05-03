@@ -1,5 +1,5 @@
-import { headers } from "next/headers";
-import React from "react";
+"use client";
+import React, { useState } from "react";
 
 type AccordionProps = {
   idx: number;
@@ -12,15 +12,20 @@ export default function AccordionQuestion({
   header,
   body,
 }: AccordionProps) {
+  const [open, setOpen] = useState(false);
+
   return (
     <div className=" ">
-      <div className="fbc bg-gray-200 py-2 px-2 ">
+      <div
+        onClick={() => setOpen(!open)}
+        className="fbc bg-gray-100 py-2 px-2 cursor-pointer  rounded"
+      >
         <p className="text-sm">
           Q{idx}. {header}
         </p>
       </div>
 
-      <div className="py-4 min-h-[150px] ">{body}</div>
+      {open && <div className="py-4 min-h-[150px] ">{body}</div>}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
-import React from "react";
-import { Checkbox, GetProp } from "antd";
+import React, { ChangeEvent } from "react";
+import { Checkbox, CheckboxProps, GetProp } from "antd";
 
 export default function SelectMultipleOptions() {
   const options = [
@@ -9,22 +9,20 @@ export default function SelectMultipleOptions() {
     { label: "Orange", value: "Orange" },
   ];
 
-  const onChange: GetProp<typeof Checkbox.Group, "onChange"> = (
-    checkedValues
-  ) => {
-    console.log("checked = ", checkedValues);
+  const onChange: CheckboxProps["onChange"] = (e) => {
+    console.log(`checked = ${e.target.checked}`);
   };
-
   return (
     <div>
-      <div className="flex flex-col">
-        <Checkbox.Group
-          options={options}
-          style={{ display: "block", marginLeft: 0 }}
-          defaultValue={["Apple"]}
-          onChange={onChange}
-          //className="flex flex-col"
-        />
+      <div className="flex flex-col space-y-2">
+        <Checkbox onChange={onChange} className="mb-4">
+          Select All
+        </Checkbox>
+        {[1, 2, 3, 4].map((i, idx) => (
+          <Checkbox key={idx} onChange={onChange} className="border-b pb-2">
+            Checkbox
+          </Checkbox>
+        ))}
       </div>
     </div>
   );

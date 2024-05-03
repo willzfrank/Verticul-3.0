@@ -44,10 +44,14 @@ export default function SelectAImage() {
         </div>
       </div>
 
-      <Radio.Group onChange={onChange}>
-        <div className="flex flex-col gap-2">
-          <Radio value="one">Image one</Radio>
-          <Radio value="two">Image two</Radio>
+      <Radio.Group onChange={onChange} className="w-full">
+        <div className="flex flex-col gap-2 w-full">
+          <Radio value="one" className="border-b pb-2 w-full">
+            Image one
+          </Radio>
+          <Radio value="two" className="border-b pb-2 w-full">
+            Image two
+          </Radio>
         </div>
       </Radio.Group>
     </div>
