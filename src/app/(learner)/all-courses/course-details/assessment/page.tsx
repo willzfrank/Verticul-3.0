@@ -48,7 +48,7 @@ const Assessment = (props: Props) => {
   ];
 
   return (
-    <div className="w-full max-w-[600px] lg:mx-auto">
+    <div className="w-full max-w-[800px] lg:mx-auto">
       <div className="flex items-start gap-4 mb-10">
         <Back navigateBack />
 
