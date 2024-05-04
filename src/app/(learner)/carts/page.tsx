@@ -1,11 +1,14 @@
 import NavbarBanner from '@/components/navbar/NavbarBanner'
 import React from 'react'
-import cartImage from '../../../../public/assets/cart-image.png'
 import Image from 'next/image'
+import CartEmpty from '@/components/CartEmpty'
+import CartItemList from '@/components/CartItemList'
 
 type Props = {}
 
 const Carts = (props: Props) => {
+  const cartEmpty = false
+
   return (
     <div>
       <NavbarBanner />
@@ -19,40 +22,13 @@ const Carts = (props: Props) => {
               🛍{' '}
             </span>
             <span className="text-gray-300 text-sm font-normal font-['Inter'] leading-tight">
-              0 items
+              {cartEmpty ? '0 items' : '1 items'}{' '}
             </span>
           </div>
         </div>
       </div>
 
-      <div className="flex items-center justify-center h-[70vh] flex-col my-5 w-full">
-        <div className="w-[281.24px] h-[267.42px] relative">
-          <Image
-            //   className="opacity-80 mix-blend-soft-light"
-            src={cartImage}
-            layout="fill"
-          />
-        </div>
-
-        <h2 className="w-[274px] text-center my-5 text-gray-900 text-sm font-medium font-['Inter'] leading-tight">
-          Hey Champ, Your cart is empty. Grab a course and start your journey.
-        </h2>
-
-        <div className="text-center">
-          <span className="text-gray-500 text-sm font-normal font-['Inter'] leading-tight">
-            Not to worry we have got you covered, visit the <br />
-          </span>
-          <span className="text-indigo-700 text-sm font-semibold font-['Inter'] leading-tight">
-            Courses page
-          </span>
-          <span className="text-gray-500 text-sm font-semibold font-['Inter'] leading-tight">
-            {' '}
-          </span>
-          <span className="text-gray-500 text-sm font-normal font-['Inter'] leading-tight">
-            {' '}
-          </span>
-        </div>
-      </div>
+      {cartEmpty ? <CartEmpty /> : <CartItemList />}
     </div>
   )
 }
