@@ -1,13 +1,29 @@
+'use client'
+
 import React from 'react'
+import { useRouter } from 'next/navigation'
+
 import AllCourseCard from './AllCourseCard'
 
-type Props = {}
+type Props = {
+  setShowFavourites: (arg: boolean) => void
+}
 
 const FavouritePage = (props: Props) => {
+  const router = useRouter() // Initialize useRouter hook
+
+  const handleGoBack = () => {
+    props.setShowFavourites(false)
+    router.back() // Go back to the previous page
+  }
+
   return (
     <div>
       <div className="flex items-center gap-5 my-5">
-        <div className="w-[33px] h-[33px] bg-white rounded-full shadow border border-gray-300 flex items-center justify-center cursor-pointer">
+        <div
+          className="w-[33px] h-[33px] bg-white rounded-full shadow border border-gray-300 flex items-center justify-center cursor-pointer"
+          onClick={handleGoBack}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

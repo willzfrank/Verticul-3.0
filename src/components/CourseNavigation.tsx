@@ -1,10 +1,9 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
-
+import { useRouter } from 'next/navigation'
 import { Tabs, TabsProps } from 'antd'
-
 import filter from '../../public/assets/filter-variant.svg'
 import FavouritePage from './FavouritePage'
 import AllCourseCard from './AllCourseCard'
@@ -51,7 +50,21 @@ const items: TabsProps['items'] = [
 ]
 
 const CourseNavigation = (props: Props) => {
+  const router = useRouter() // Initialize useRouter hook
   const [showFavourites, setShowFavourites] = useState(false)
+
+  useEffect(() => {
+    // Check if URL contains the 'view' parameter and its value is 'favourites'
+    const urlParams = new URLSearchParams(window.location.search)
+    if (urlParams.has('view') && urlParams.get('view') === 'favourites') {
+      setShowFavourites(true)
+    }
+  }, [])
+
+  const handleFavouritesClick = () => {
+    setShowFavourites(true)
+    router.push('/all-courses?view=favourites')
+  }
 
   return (
     <div className="wrapper">
@@ -63,7 +76,7 @@ const CourseNavigation = (props: Props) => {
         <div className="flex items-center gap-2">
           <div
             className="w-max cursor-pointer h-7 px-2 pr-10 py-1 bg-gradient-to-r from-pink-50 to-pink-300 rounded shadow border border-pink-200 justify-start items-center gap-1 inline-flex"
-            onClick={() => setShowFavourites(true)}
+            onClick={handleFavouritesClick}
           >
             <div className="w-3.5 h-3.5 justify-center items-center flex">
               <div className="w-3.5 h-3.5 relative">
@@ -96,7 +109,7 @@ const CourseNavigation = (props: Props) => {
       </div>
 
       {showFavourites ? (
-        <FavouritePage />
+        <FavouritePage setShowFavourites={setShowFavourites} />
       ) : (
         <div className="grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-y-16 gap-x-8 ">
           <AllCourseCard />
