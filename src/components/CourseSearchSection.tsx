@@ -23,7 +23,11 @@ interface HeadingProps {
 }
 
 const Heading: React.FC<HeadingProps> = ({ text }) => {
-  return <p className="text-2xl font-medium">{text}</p>
+  return (
+    <h2 className="text-gray-900 text-4xl font-medium font-space-grotesk">
+      {text}
+    </h2>
+  )
 }
 
 const SearchBox = () => {

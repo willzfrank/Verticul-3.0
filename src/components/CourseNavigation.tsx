@@ -14,22 +14,38 @@ type Props = {}
 const items: TabsProps['items'] = [
   {
     key: '1',
-    label: 'Popular Courses',
+    label: (
+      <h2 className="text-slate-700 text-base font-medium font-inter leading-normal">
+        Popular Courses
+      </h2>
+    ),
     children: '',
   },
   {
     key: '2',
-    label: 'Recommended',
+    label: (
+      <h2 className="text-slate-700 text-base font-medium font-inter leading-normal">
+        Recommended{' '}
+      </h2>
+    ),
     children: '',
   },
   {
     key: '3',
-    label: 'Top rated',
+    label: (
+      <h2 className="text-slate-700 text-base font-medium font-inter leading-normal">
+        Top Rated{' '}
+      </h2>
+    ),
     children: '',
   },
   {
     key: '4',
-    label: 'New',
+    label: (
+      <h2 className="text-slate-700 text-base font-medium font-inter leading-normal">
+        New{' '}
+      </h2>
+    ),
     children: '',
   },
 ]
@@ -46,7 +62,7 @@ const CourseNavigation = (props: Props) => {
 
         <div className="flex items-center gap-2">
           <div
-            className="w-max cursor-pointer h-7 px-2 py-1 bg-gradient-to-r from-pink-50 to-pink-300 rounded shadow border border-pink-200 justify-start items-center gap-1 inline-flex"
+            className="w-max cursor-pointer h-7 px-2 pr-10 py-1 bg-gradient-to-r from-pink-50 to-pink-300 rounded shadow border border-pink-200 justify-start items-center gap-1 inline-flex"
             onClick={() => setShowFavourites(true)}
           >
             <div className="w-3.5 h-3.5 justify-center items-center flex">
@@ -61,7 +77,7 @@ const CourseNavigation = (props: Props) => {
                 </svg>
               </div>
             </div>
-            <span className="text-slate-700 text-sm font-medium font-['Inter'] leading-tight">
+            <span className="text-slate-700 text-sm font-medium font-inter leading-tight">
               Favourites
             </span>
           </div>
@@ -71,8 +87,8 @@ const CourseNavigation = (props: Props) => {
               <div className="w-3.5 h-3.5 relative">
                 <Image src={filter} alt="" layout="fill" />
               </div>
-              <div className="text-slate-700 text-sm font-medium font-['Inter'] leading-tight">
-                Filter by
+              <div className="text-slate-700 text-sm font-medium font-inter leading-tight">
+                Filters
               </div>
             </div>
           </div>
@@ -82,7 +98,7 @@ const CourseNavigation = (props: Props) => {
       {showFavourites ? (
         <FavouritePage />
       ) : (
-        <div className="grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-y-16 gap-x-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-y-16 gap-x-8 ">
           <AllCourseCard />
           <AllCourseCard />
           <AllCourseCard />

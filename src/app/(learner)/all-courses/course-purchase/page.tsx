@@ -23,7 +23,13 @@ type Props = {}
 const items: TabsProps['items'] = [
   {
     key: '1',
-    label: 'Popular Courses',
+    label: (
+      <div className="w-[127px] h-9 pb-3 justify-center items-center inline-flex">
+        <h2 className="text-slate-700 text-base font-medium font-['Inter'] leading-normal">
+          Popular Courses
+        </h2>
+      </div>
+    ),
     children: '',
   },
   {

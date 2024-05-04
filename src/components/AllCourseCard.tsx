@@ -39,7 +39,7 @@ const AllCourseCard = (props: Props) => {
   ]
 
   return (
-    <div className=" bg-gray-100 rounded-xl  shadow-md   border border-gray-200 flex-col inline-flex">
+    <div className=" bg-gray-100 rounded-xl  shadow-md   border border-gray-200 flex-col inline-flex animate__animated animate__fadeIn">
       <div className="rounded-xl ">
         <div className="relative w-full">
           <Image
@@ -71,20 +71,20 @@ const AllCourseCard = (props: Props) => {
             <div className="px-3 py-2 space-y-4 flex items-center justify-between">
               <div>
                 <div className="space-y-1">
-                  <h2 className="text-gray-900  font-medium ">
+                  <h2 className="text-gray-900  font-medium font-inter leading-tight">
                     Digital Marketing Fundamentals
                   </h2>
                 </div>
 
                 <div className="fc gap-2">
                   <div>
-                    <span className="text-gray-400 text-xs font-medium font-['Inter'] leading-[18px]">
+                    <span className="text-gray-400 text-xs font-medium font-inter leading-[18px]">
                       Modules
                     </span>
-                    <span className="text-gray-500 text-xs font-medium font-['Inter'] leading-[18px]">
+                    <span className="text-gray-500 text-xs font-medium font-inter leading-[18px]">
                       {' '}
                     </span>
-                    <span className="text-slate-700 text-xs font-medium font-['Inter'] leading-[18px]">
+                    <span className="text-slate-700 text-xs font-medium font-inter leading-[18px]">
                       4
                     </span>
                   </div>
@@ -92,10 +92,10 @@ const AllCourseCard = (props: Props) => {
                 </div>
               </div>
               <div className="flex items-end flex-col">
-                <p className="text-gray-500 text-base font-normal leading-normal">
+                <p className="text-gray-500 text-base font-inter font-normal leading-normal">
                   $15
                 </p>
-                <p className="text-gray-900 text-base font-semibold leading-normal">
+                <p className="text-gray-900 text-base font-inter font-semibold leading-normal">
                   N23,000
                 </p>
               </div>
@@ -115,7 +115,7 @@ const AllCourseCard = (props: Props) => {
                   </div>
                 </div>
 
-                <p className="text-emerald-500 text-xs font-medium font-['Inter'] leading-[18px]">
+                <p className="text-emerald-500 text-xs font-medium font-inter leading-[18px]">
                   10% Discount{' '}
                 </p>
               </div>
@@ -131,7 +131,7 @@ const AllCourseCard = (props: Props) => {
         <div className="w-[70%]">
           <Link href="/all-courses/course-details">
             <button className="w-full px-3 py-2 bg-gradient-to-b from-indigo-400 to-indigo-500 rounded shadow border border-violet-500 flex-col justify-center items-center gap-px flex">
-              <p className="text-violet-50 text-xs">Buy</p>
+              <p className="text-violet-50 text-xs font-inter">Buy</p>
             </button>
           </Link>
         </div>
@@ -160,7 +160,7 @@ const AllCourseCard = (props: Props) => {
                 />
               </svg>
             </div>
-            <span className="text-slate-700 text-sm font-medium font-['Inter'] leading-tight">
+            <span className="text-slate-700 text-sm font-medium font-inter leading-tight ">
               Cart
             </span>
           </button>
