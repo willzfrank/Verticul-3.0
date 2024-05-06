@@ -1,35 +1,35 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react'
-import dynamic from 'next/dynamic'
-import CurriculumProgressTracker from '@/components/ProgressTracker/CurriculumProgressTracker'
-import ProgressTrackerCard from '@/components/ProgressTracker/ProgressTrackerCard'
-import NavbarBanner from '@/components/navbar/NavbarBanner'
-import completedImage from '../../../../public/assets/completedCourseCard.svg'
-import EmptyCourse from '@/components/EmptyCourse'
-import CourseCardContainer from '@/components/CourseCard'
-import { IoMdClose } from 'react-icons/io'
-import { BiSolidCopyAlt } from 'react-icons/bi'
-import { CompletedCourseOverlay } from '../../_components/courses/CompletedCourseOverlay'
-import { UncompletedCourseOverlay } from '../../_components/courses/UncompletedCourseOverlay'
-import { TbBriefcaseFilled } from 'react-icons/tb'
+import React, { useState } from "react";
+import dynamic from "next/dynamic";
+import CurriculumProgressTracker from "@/components/ProgressTracker/CurriculumProgressTracker";
+import ProgressTrackerCard from "@/components/ProgressTracker/ProgressTrackerCard";
+import NavbarBanner from "@/components/navbar/NavbarBanner";
+import completedImage from "../../../../public/assets/completedCourseCard.svg";
+import EmptyCourse from "@/components/EmptyCourse";
+import CourseCardContainer from "@/components/CourseCard";
+import { IoMdClose } from "react-icons/io";
+import { BiSolidCopyAlt } from "react-icons/bi";
+import { CompletedCourseOverlay } from "../../_components/courses/CompletedCourseOverlay";
+import { UncompletedCourseOverlay } from "../../_components/courses/UncompletedCourseOverlay";
+import { TbBriefcaseFilled } from "react-icons/tb";
 
 // Dynamically import CourseTitle
-const CourseTitle = dynamic(() => import('@/components/CourseTitle'), {
+const CourseTitle = dynamic(() => import("@/components/CourseTitle"), {
   ssr: false,
-})
+});
 // const CourseCardContainer = dynamic(
 //   () => import("@/components/CourseCardContainer"),
 //   { ssr: false }
 // );
 
 const LearnerCourseDetails = () => {
-  const [userPaidForCourse, setUserPaidForCourse] = useState(true)
+  const [userPaidForCourse, setUserPaidForCourse] = useState(true);
   const [openCourseDropDown, setOpenCourseDropDown] = useState<any>({
     modal: false,
-    title: '',
-    key: '',
-  })
+    title: "",
+    key: "",
+  });
 
   return (
     <main>
@@ -42,12 +42,12 @@ const LearnerCourseDetails = () => {
             <ProgressTrackerCard
               progress="14"
               title="Completed Courses"
-              image={completedImage}
+              image="/assets/completedCourseCard.svg"
               onClick={() =>
                 setOpenCourseDropDown({
                   modal: true,
-                  title: 'Completed Course',
-                  key: 'completed_course',
+                  title: "Completed Course",
+                  key: "completed_course",
                 })
               }
             />
@@ -60,8 +60,8 @@ const LearnerCourseDetails = () => {
               onClick={() =>
                 setOpenCourseDropDown({
                   modal: true,
-                  title: 'Uncompleted Courses',
-                  key: 'uncompleted_course',
+                  title: "Uncompleted Courses",
+                  key: "uncompleted_course",
                 })
               }
             />
@@ -74,8 +74,8 @@ const LearnerCourseDetails = () => {
               onClick={() =>
                 setOpenCourseDropDown({
                   modal: true,
-                  title: 'Completed Course',
-                  key: 'completed_course',
+                  title: "Completed Course",
+                  key: "completed_course",
                 })
               }
             />
@@ -87,7 +87,7 @@ const LearnerCourseDetails = () => {
                 <div className="bg-white px-5 fbc py-3 rounded-t-xl border-b ">
                   <div className="fc gap-2">
                     <div className="border w-10 h-10 fcc rounded-full  ">
-                      {openCourseDropDown.key === 'uncompleted_course' ? (
+                      {openCourseDropDown.key === "uncompleted_course" ? (
                         <TbBriefcaseFilled color="black" size={18} />
                       ) : (
                         <BiSolidCopyAlt color="black" size={18} />
@@ -102,8 +102,8 @@ const LearnerCourseDetails = () => {
                     onClick={() =>
                       setOpenCourseDropDown({
                         modal: false,
-                        title: '',
-                        key: '',
+                        title: "",
+                        key: "",
                       })
                     }
                     className="border border-gray-200 rounded-md w-8 h-8 fcc cursor-pointer"
@@ -114,10 +114,10 @@ const LearnerCourseDetails = () => {
 
                 <div className="overflow-y-scroll h-[60vh]">
                   <div className="bg-u-slate-100 px-8 py-3 pb-10 space-y-6 rounded-b-xl mt-6">
-                    {openCourseDropDown.key === 'uncompleted_course' && (
+                    {openCourseDropDown.key === "uncompleted_course" && (
                       <UncompletedCourseOverlay />
                     )}
-                    {openCourseDropDown.key === 'completed_course' && (
+                    {openCourseDropDown.key === "completed_course" && (
                       <CompletedCourseOverlay />
                     )}
                   </div>
@@ -138,7 +138,7 @@ const LearnerCourseDetails = () => {
         <EmptyCourse />
       )}
     </main>
-  )
-}
+  );
+};
 
-export default LearnerCourseDetails
+export default LearnerCourseDetails;
