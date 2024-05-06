@@ -137,13 +137,10 @@ const AllCourseCard = (props: Props) => {
         </div>
 
         <Link
-          href="#"
+          href="/carts"
           className="px-2 py-2 bg-white rounded shadow border border-gray-300 justify-center items-center gap-1 flex"
         >
-          <button
-            className="justify-center items-center flex"
-            onClick={() => setShareModal(true)}
-          >
+          <button className="justify-center items-center flex">
             <div className="w-3.5 h-3.5 justify-center items-center flex relative">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

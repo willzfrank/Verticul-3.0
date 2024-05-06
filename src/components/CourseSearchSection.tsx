@@ -10,7 +10,7 @@ const CourseSearchSection: React.FC<CourseSearchSectionProps> = ({
   headerText,
 }) => {
   return (
-    <div className="py-5 bg-[#FCFCFD]">
+    <div className="py-5 bg-white">
       <div className="wrapper fbc">
         <Heading text={headerText} /> <SearchBox />
       </div>
