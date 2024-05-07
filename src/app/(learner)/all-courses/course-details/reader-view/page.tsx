@@ -31,3 +31,5 @@ const ReaderView: React.FC<Props> = ({ handleStartLearning }) => {
     </div>
   )
 }
+
+export default ReaderView
