@@ -9,7 +9,7 @@ type Props = {
   handleStartLearning: () => void
 }
 
-export const ReaderView: React.FC<Props> = ({ handleStartLearning }) => {
+const ReaderView: React.FC<Props> = ({ handleStartLearning }) => {
   const [isSubscribed, setIsSubscribed] = React.useState(true)
   return (
     <div className="w-full">
