@@ -5,11 +5,7 @@ import CourseDetailsHeader from '@/components/CourseDetailsHeader'
 import CourseDetailsTab from '@/components/CourseDetailsTab'
 import ReaderViewBody from '@/components/ReaderViewBody'
 
-type Props = {
-  handleStartLearning: () => void
-}
-
-const ReaderView: React.FC<Props> = ({ handleStartLearning }) => {
+const ReaderView: React.FC = () => {
   const [isSubscribed, setIsSubscribed] = React.useState(true)
   return (
     <div className="w-full">
@@ -22,10 +18,10 @@ const ReaderView: React.FC<Props> = ({ handleStartLearning }) => {
         <ReaderViewBody />
         {/* Modules */}
         <div className="w-[35%] mt-5">
-          <CourseDetailsTab
+          {/* <CourseDetailsTab
             handleStartLearning={handleStartLearning}
             isSubscribed={isSubscribed}
-          />
+          /> */}
         </div>
       </div>
     </div>
