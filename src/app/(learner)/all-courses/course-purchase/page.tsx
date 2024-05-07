@@ -24,27 +24,37 @@ const items: TabsProps['items'] = [
   {
     key: '1',
     label: (
-      <div className="w-[127px] h-9 pb-3 justify-center items-center inline-flex">
-        <h2 className="text-slate-700 text-base font-medium font-['Inter'] leading-normal">
-          Popular Courses
-        </h2>
-      </div>
+      <h2 className="text-slate-700 text-base font-medium font-['Inter'] leading-normal">
+        Popular Courses
+      </h2>
     ),
     children: '',
   },
   {
     key: '2',
-    label: 'Recommended',
+    label: (
+      <h2 className="text-slate-700 text-base font-medium font-['Inter'] leading-normal">
+        Recommended
+      </h2>
+    ),
     children: '',
   },
   {
     key: '3',
-    label: 'Top rated',
+    label: (
+      <h2 className="text-slate-700 text-base font-medium font-['Inter'] leading-normal">
+        Top Rated
+      </h2>
+    ),
     children: '',
   },
   {
     key: '4',
-    label: 'New',
+    label: (
+      <h2 className="text-slate-700 text-base font-medium font-['Inter'] leading-normal">
+        New
+      </h2>
+    ),
     children: '',
   },
 ]

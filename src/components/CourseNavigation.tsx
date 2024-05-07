@@ -8,8 +8,6 @@ import filter from '../../public/assets/filter-variant.svg'
 import FavouritePage from './FavouritePage'
 import AllCourseCard from './AllCourseCard'
 
-type Props = {}
-
 const items: TabsProps['items'] = [
   {
     key: '1',
@@ -24,7 +22,7 @@ const items: TabsProps['items'] = [
     key: '2',
     label: (
       <h2 className="text-slate-700 text-base font-medium font-inter leading-normal">
-        Recommended{' '}
+        Recommended
       </h2>
     ),
     children: '',
@@ -33,7 +31,7 @@ const items: TabsProps['items'] = [
     key: '3',
     label: (
       <h2 className="text-slate-700 text-base font-medium font-inter leading-normal">
-        Top Rated{' '}
+        Top Rated
       </h2>
     ),
     children: '',
@@ -42,14 +40,14 @@ const items: TabsProps['items'] = [
     key: '4',
     label: (
       <h2 className="text-slate-700 text-base font-medium font-inter leading-normal">
-        New{' '}
+        New
       </h2>
     ),
     children: '',
   },
 ]
 
-const CourseNavigation = (props: Props) => {
+const CourseNavigation = () => {
   const router = useRouter() // Initialize useRouter hook
   const [showFavourites, setShowFavourites] = useState(false)
 
