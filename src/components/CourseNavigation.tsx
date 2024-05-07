@@ -47,7 +47,7 @@ const items: TabsProps['items'] = [
   },
 ]
 
-const CourseNavigation = (props: Props) => {
+const CourseNavigation = () => {
   const router = useRouter() // Initialize useRouter hook
   const [showFavourites, setShowFavourites] = useState(false)
 
