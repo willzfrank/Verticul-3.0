@@ -1,17 +1,17 @@
-import { Modal } from "antd";
-import React from "react";
-import completed from "../../public/assets/completedCourseCard.svg";
-import certificate_document from "../../public/assets/certificate_document.svg";
-import certificate_image from "../../public/assets/certificate_image.png";
-import certificate_award from "../../public/assets/certificate_award_blue.svg";
+import { Modal } from 'antd'
+import React from 'react'
+import completed from '../../public/assets/completedCourseCard.svg'
+import certificate_document from '../../public/assets/certificate_document.svg'
+import certificate_image from '../../public/assets/certificate_image.png'
+import certificate_award from '../../public/assets/certificate_award_blue.svg'
 
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image'
+import Link from 'next/link'
 
 type Props = {
-  isOpenCompletedModal: boolean;
-  setIsOpenCompletedModal: (value: boolean) => void;
-};
+  isOpenCompletedModal: boolean
+  setIsOpenCompletedModal: (value: boolean) => void
+}
 
 const CompletedCourseModal: React.FC<Props> = ({
   isOpenCompletedModal,
@@ -141,7 +141,7 @@ const CompletedCourseModal: React.FC<Props> = ({
                     See more details
                   </p>
                   <Link
-                    href="/certificate"
+                    href="/certificate-acquired"
                     className="justify-start items-center gap-1 flex"
                   >
                     <div className="w-3.5 h-3.5 justify-center items-center flex">
@@ -164,7 +164,7 @@ const CompletedCourseModal: React.FC<Props> = ({
         </div>
       </div>
     </Modal>
-  );
-};
+  )
+}
 
-export default CompletedCourseModal;
+export default CompletedCourseModal

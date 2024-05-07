@@ -1,8 +1,8 @@
-import { Modal } from "antd";
-import React from "react";
-import completed from "../../public/assets/completedCourseCard.svg";
-import Image from "next/image";
-import Link from "next/link";
+import { Modal } from 'antd'
+import React from 'react'
+import completed from '../../public/assets/completedCourseCard.svg'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export const CompletedCourseOverlay = () => {
   return (
@@ -82,7 +82,7 @@ export const CompletedCourseOverlay = () => {
 
         <div className="fbc mt-5">
           <Link
-            href="/certificate"
+            href="/all-courses/course-details/certificate"
             className="text-slate-700 text-xs font-medium cursor-pointer"
           >
             See more details
@@ -105,5 +105,5 @@ export const CompletedCourseOverlay = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

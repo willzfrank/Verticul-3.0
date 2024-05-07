@@ -17,9 +17,9 @@ const CertificateProgressBar = (props: Props) => {
       <p className="w-[274px] text-center text-gray-900 text-sm font-medium font-['Inter'] leading-tight">
         You are almost close to the finish line, Certificate is 70% ready.{' '}
       </p>
-      <div className="w-[25%] bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700 border border-black">
+      <div className="w-[80%] rounded-full h-2.5 mb-4 dark:bg-gray-700 border border-indigo-200 bg-indigo-200">
         <div
-          className="bg-[#101828] h-2.5 rounded-full"
+          className="bg-indigo-500 ] h-2.5 rounded-full"
           style={{ width: '45%' }}
         ></div>
       </div>
