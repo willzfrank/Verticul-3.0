@@ -1,38 +1,39 @@
-"use client";
+'use client'
 
-import React, { useState } from "react";
-import { usePathname } from "next/navigation";
-import exploreCard from "../../../public/assets/images/sidebar/explore-card.png";
-import safari from "../../../public/assets/images/sidebar/safari.png";
-import Image from "next/image";
+import React, { useState } from 'react'
+import { usePathname } from 'next/navigation'
+import exploreCard from '../../../public/assets/images/sidebar/explore-card.png'
+import safari from '../../../public/assets/images/sidebar/safari.png'
+import Image from 'next/image'
 
-import { Flex, Progress } from "antd";
-import Link from "next/link";
-import PFP from "@/app/_components/PFP";
+import { Flex, Progress } from 'antd'
+import Link from 'next/link'
+import PFP from '@/app/_components/PFP'
 import {
   ResponsiveContainer,
   StackedCarousel,
-} from "react-stacked-center-carousel";
-import { MdOutlineVerified } from "react-icons/md";
-import { LiaAwardSolid } from "react-icons/lia";
-import { PiFolder } from "react-icons/pi";
-import { GoVerified } from "react-icons/go";
+} from 'react-stacked-center-carousel'
+import { MdOutlineVerified } from 'react-icons/md'
+import { LiaAwardSolid } from 'react-icons/lia'
+import { PiFolder } from 'react-icons/pi'
+import { GoVerified } from 'react-icons/go'
 
-import { BsPatchQuestion } from "react-icons/bs";
+import { BsPatchQuestion } from 'react-icons/bs'
 
-import { CiLogout } from "react-icons/ci";
-import { HiMiniChevronDoubleRight } from "react-icons/hi2";
-import { HiOutlineChevronDoubleLeft } from "react-icons/hi";
+import { CiLogout } from 'react-icons/ci'
+import { HiMiniChevronDoubleRight } from 'react-icons/hi2'
+import { HiOutlineChevronDoubleLeft } from 'react-icons/hi'
+import { useAppContext } from '@/context/AppContext'
 
 type CardProps = {
-  data: { cover: string; title: string }[];
-  dataIndex: number;
-};
+  data: { cover: string; title: string }[]
+  dataIndex: number
+}
 const course_navlinks = [
   {
-    link: "/all-courses/course-details/assessment",
+    link: '/all-courses/course-details/assessment',
     icon: PiFolder,
-    name: "Asssement",
+    name: 'Asssement',
     notif: (
       <div className="p-1 text-amber-500 bg-amber-50 text-[10px] rounded">
         10
@@ -40,9 +41,9 @@ const course_navlinks = [
     ),
   },
   {
-    link: "/all-courses/course-details/quiz",
+    link: '/all-courses/course-details/quiz',
     icon: BsPatchQuestion,
-    name: "Quiz",
+    name: 'Quiz',
     notif: (
       <div className="p-1 text-green-500 bg-green-50 text-[10px] rounded">
         10
@@ -50,71 +51,71 @@ const course_navlinks = [
     ),
   },
   {
-    link: "/all-courses/course-details/scores",
+    link: '/all-courses/course-details/scores',
     icon: GoVerified,
-    name: "Score",
+    name: 'Score',
   },
   {
-    link: "/all-courses/course-details/certificate",
+    link: '/all-courses/course-details/certificate',
     icon: LiaAwardSolid,
-    name: "Certificate",
+    name: 'Certificate',
     notif: <Progress type="circle" percent={25} size={18} />,
   },
-];
+]
 
 export const data = [
   {
-    cover: "https://images6.alphacoders.com/679/thumb-1920-679459.jpg",
-    title: "Interstaller",
+    cover: 'https://images6.alphacoders.com/679/thumb-1920-679459.jpg',
+    title: 'Interstaller',
   },
   {
-    cover: "https://images2.alphacoders.com/851/thumb-1920-85182.jpg",
-    title: "Inception",
+    cover: 'https://images2.alphacoders.com/851/thumb-1920-85182.jpg',
+    title: 'Inception',
   },
   {
-    cover: "https://images6.alphacoders.com/875/thumb-1920-875570.jpg",
-    title: "Blade Runner 2049",
+    cover: 'https://images6.alphacoders.com/875/thumb-1920-875570.jpg',
+    title: 'Blade Runner 2049',
   },
   {
-    cover: "https://images6.alphacoders.com/114/thumb-1920-1141749.jpg",
-    title: "Icon man 3",
+    cover: 'https://images6.alphacoders.com/114/thumb-1920-1141749.jpg',
+    title: 'Icon man 3',
   },
   {
-    cover: "https://images3.alphacoders.com/948/thumb-1920-948864.jpg",
-    title: "Venom",
+    cover: 'https://images3.alphacoders.com/948/thumb-1920-948864.jpg',
+    title: 'Venom',
   },
   {
-    cover: "https://images2.alphacoders.com/631/thumb-1920-631095.jpg",
-    title: "Steins Gate",
+    cover: 'https://images2.alphacoders.com/631/thumb-1920-631095.jpg',
+    title: 'Steins Gate',
   },
   {
-    cover: "https://images4.alphacoders.com/665/thumb-1920-665242.png",
-    title: "One Punch Man",
+    cover: 'https://images4.alphacoders.com/665/thumb-1920-665242.png',
+    title: 'One Punch Man',
   },
   {
-    cover: "https://images2.alphacoders.com/738/thumb-1920-738176.png",
-    title: "A Silent Voice",
+    cover: 'https://images2.alphacoders.com/738/thumb-1920-738176.png',
+    title: 'A Silent Voice',
   },
   {
-    cover: "https://images8.alphacoders.com/100/thumb-1920-1005531.jpg",
-    title: "Demon Slayer",
+    cover: 'https://images8.alphacoders.com/100/thumb-1920-1005531.jpg',
+    title: 'Demon Slayer',
   },
   {
-    cover: "https://images2.alphacoders.com/582/thumb-1920-582804.png",
-    title: "Attack On Titan",
+    cover: 'https://images2.alphacoders.com/582/thumb-1920-582804.png',
+    title: 'Attack On Titan',
   },
-];
+]
 
 export const Card = React.memo(function (props: CardProps) {
-  const { data, dataIndex } = props;
-  const { cover } = data[dataIndex];
+  const { data, dataIndex } = props
+  const { cover } = data[dataIndex]
 
   return (
     <div
       style={{
-        width: "100%",
+        width: '100%',
         height: 300,
-        userSelect: "none",
+        userSelect: 'none',
       }}
       className="my-slide-component"
     >
@@ -128,29 +129,29 @@ export const Card = React.memo(function (props: CardProps) {
         src={cover}
       />
     </div>
-  );
-});
+  )
+})
 
-Card.displayName = "Card";
+Card.displayName = 'Card'
 
 const Sidebar = () => {
-  const ref = React.useRef();
-  const [isCourseDetailsOpen, setIsCourseDetailsOpen] = useState(false);
-  const [active, setActive] = useState("");
-  const pathname = usePathname();
-  const [isExpanded, setIsExpanded] = useState(true);
+  const ref = React.useRef()
+  const [isCourseDetailsOpen, setIsCourseDetailsOpen] = useState(false)
+  const [active, setActive] = useState('')
+  const pathname = usePathname()
+  const { isExpanded, setIsExpanded } = useAppContext()
 
   const toggleDropdown = () => {
-    setIsCourseDetailsOpen((prev) => !prev);
-  };
+    setIsCourseDetailsOpen((prev) => !prev)
+  }
 
   const toggleActive = (item: React.SetStateAction<string>) => {
-    setActive(active === item ? "" : item);
-  };
+    setActive(active === item ? '' : item)
+  }
   return (
     <div
       className={`hidden lg:block fixed h-[calc(100vh-100px)] bg-white ${
-        isExpanded ? "!w-[300px]" : "w-[70px]"
+        isExpanded ? '!w-[300px]' : 'w-[70px]'
       } `}
     >
       <div
@@ -261,8 +262,8 @@ const Sidebar = () => {
                 href={nav.link}
                 className={`px-2 cursor-pointer rounded-md  ${
                   isExpanded
-                    ? "py-2 hover:bg-gray-50 fbc"
-                    : "!px-4 py-3 hover:bg-gray-100 fcc"
+                    ? 'py-2 hover:bg-gray-50 fbc'
+                    : '!px-4 py-3 hover:bg-gray-100 fcc'
                 } transition-all`}
               >
                 <div className="fc gap-3">
@@ -298,14 +299,14 @@ const Sidebar = () => {
             {isExpanded && (
               <div
                 className="my-5"
-                style={{ width: "100%", position: "relative" }}
+                style={{ width: '100%', position: 'relative' }}
               >
                 <ResponsiveContainer
                   carouselRef={ref}
                   render={(parentWidth, carouselRef) => {
-                    let currentVisibleSlide = 5;
-                    if (parentWidth <= 1440) currentVisibleSlide = 3;
-                    if (parentWidth <= 1080) currentVisibleSlide = 3;
+                    let currentVisibleSlide = 5
+                    if (parentWidth <= 1440) currentVisibleSlide = 3
+                    if (parentWidth <= 1080) currentVisibleSlide = 3
                     return (
                       <StackedCarousel
                         ref={carouselRef}
@@ -318,7 +319,7 @@ const Sidebar = () => {
                         maxVisibleSlide={5}
                         useGrabCursor
                       />
-                    );
+                    )
                   }}
                 />
               </div>
@@ -347,7 +348,7 @@ const Sidebar = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar
