@@ -16,7 +16,9 @@ export const useAppContext = (): AppContextType => {
   return context
 }
 
-export const AppProvider: React.FC = ({ children }) => {
+export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [isExpanded, setIsExpanded] = useState(true)
 
   return (
