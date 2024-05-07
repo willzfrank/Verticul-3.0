@@ -129,7 +129,7 @@ const AllCourseCard = (props: Props) => {
 
       <div className="w-full mt-2 p-2 justify-between  items-center gap-2 flex">
         <div className="w-[70%]">
-          <Link href="/all-courses/course-details">
+          <Link href="/all-courses/course-purchase">
             <button className="w-full px-3 py-2 bg-gradient-to-b from-indigo-400 to-indigo-500 rounded shadow border border-violet-500 flex-col justify-center items-center gap-px flex">
               <p className="text-violet-50 text-xs font-inter">Buy</p>
             </button>
